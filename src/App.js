@@ -1,9 +1,8 @@
-import './App.css';
+import Foundational from "./components/Foundational";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Foundational />
   );
 }
 
