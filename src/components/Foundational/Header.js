@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
+        bg={useColorModeValue('#0A1128', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
@@ -58,7 +58,7 @@ export default function Header() {
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
+            color={useColorModeValue('white', 'white')}>
             Hi!
           </Text>
 
@@ -76,8 +76,8 @@ export default function Header() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
+  const linkColor = useColorModeValue('gray.200', 'gray.200');
+  const linkHoverColor = useColorModeValue('gray.300', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (

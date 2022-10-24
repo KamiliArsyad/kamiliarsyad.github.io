@@ -1,7 +1,11 @@
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
+import ReactMarkdown from 'react-markdown';
+
+
 export default function TextBox({ text }) {
   return (
     <div>
-      <h1>{text}</h1>
+      <ReactMarkdown components={ChakraUIRenderer()} children={text} skipHtml />
     </div>
   );
 }
