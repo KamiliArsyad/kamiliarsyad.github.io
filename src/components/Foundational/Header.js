@@ -21,6 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
 
 /*
   Most of the code here is from https://chakra-templates.dev/navigation/navbar
@@ -123,9 +124,15 @@ const DesktopNav = () => {
 };
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+  const navigate = useNavigate();
+
+  const handleLinkClick = (href) => {
+    navigate(href);
+  }
+
   return (
     <Link
-      href={href}
+      onClick={() => handleLinkClick(href)}
       role={'group'}
       display={'block'}
       p={2}
@@ -233,11 +240,11 @@ const NAV_ITEMS = [
       {
         label: 'Me',
         subLabel: 'Hello hello let me introduce myself',
-        href: '#',
+        href: '/',
       },
       {
         label: 'Research and Project Interests',
-        href: '#',
+        href: '/interests',
       },
     ],
   },

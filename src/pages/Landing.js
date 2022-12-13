@@ -6,7 +6,8 @@ import { Container, Stack } from "@chakra-ui/react";
 const LANDING_TEXT = `
 # Hi! I'm Arsyad Kamili
 - Undergraduate student at the National University of Singapore
-- Majoring in Computer Science
+- Majoring in Computer Science, Specialising in Networks and Distributed Systems, 
+Algorithms and Theory, and Database Systems
 - Minoring in Quantitative Finance and Urban Studies
 `;
 
