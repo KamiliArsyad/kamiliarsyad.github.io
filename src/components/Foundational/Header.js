@@ -80,6 +80,10 @@ const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.200', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.300', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  const navigate = useNavigate();
+  const handleLinkClick = (href) => {
+    navigate(href);
+  };
 
   return (
     <Stack direction={'row'} spacing={4}>
@@ -89,7 +93,7 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href ?? '#'}
+                onClick={() => handleLinkClick(navItem.href)}
                 fontSize={'sm'}
                 fontWeight={500}
                 color={linkColor}
@@ -265,7 +269,7 @@ const NAV_ITEMS = [
   },
   {
     label: 'Academics',
-    href: '#',
+    href: 'academics',
   },
   {
     label: 'Blog',

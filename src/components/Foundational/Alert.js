@@ -23,6 +23,7 @@ export function Alert({ isOpen, onClose }) {
 
           <AlertDialogBody>
             This new website is still under construction so most of it may be empty.
+            The website navigation also does not work on mobile yet :( (but it will soon!)
             Fret not though, I'm working on it! :)
           </AlertDialogBody>
 
