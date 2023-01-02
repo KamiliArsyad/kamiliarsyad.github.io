@@ -8,10 +8,10 @@ const FULL_TEXT = `
 
 |Module Code| Title|
 |--|--|
-|[CS1101S](https://nusmods.com/modules/CS1101S/programming-methodology)|Programming Methodology ⭐|
+|[CS1101S](https://nusmods.com/modules/CS1101S/programming-methodology)|*Programming Methodology* ⭐|
 |[CS1231S](https://nusmods.com/modules/CS1231S/discrete-structures)|Discrete Structures|
-| [CS2030S](https://nusmods.com/modules/CS2030S/programming-methodology-ii) | Programming Methodology II ⭐|
-| [CS2040S](https://nusmods.com/modules/CS2040S/data-structures-and-algorithms) | Data Structures and Algorithms |
+|[CS2030S](https://nusmods.com/modules/CS2030S/programming-methodology-ii) | *Programming Methodology II* ⭐|
+|[CS2040S](https://nusmods.com/modules/CS2040S/data-structures-and-algorithms) | Data Structures and Algorithms |
 |[CS2100](https://nusmods.com/modules/CS2100/computer-organisation)|Computer Organization⭐|
 |[CS2102](https://nusmods.com/modules/CS2102/database-systems)|**Database Systems**|
 |[CS3230](https://nusmods.com/modules/CS3230/design-and-analysis-of-algorithms)|**Design and Analysis of Algorithm** ⭐|
