@@ -12,8 +12,8 @@ Algorithms and Theory, and Database Systems
 
 ## Links
 - [**LinkedIn**](https://www.linkedin.com/in/arsyad-kamili/)
-- [**GitHub**](github.com/KamiliArsyad)
-- [**YouTube**](youtube.com/c/ArsyadKamili)
+- [**GitHub**](https://github.com/KamiliArsyad)
+- [**YouTube**](https://youtube.com/c/ArsyadKamili)
 `;
 
 
