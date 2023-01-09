@@ -4,7 +4,18 @@ import { Container, Stack } from "@chakra-ui/react";
 const FULL_TEXT = `
 # Modules Taken
 *Here is a list of modules I've taken so far in NUS sorted on each subsection by ascending level. Do read the note at the bottom first!*
-## Computer Science and its Maths
+
+## Current Modules
+|Module Code|Title|
+|--|--|
+|[RE1701](https://nusmods.com/modules/RE1701/urban-land-use-and-development)|Urban Land Use and Development|
+|[CS2106](https://nusmods.com/modules/CS2106/introduction-to-operating-systems)|Introduction to Operating Systems|
+|[CS2105](https://nusmods.com/modules/CS2105/introduction-to-computer-networks)|Introduction to Computer Networks|
+|[CS2109S](https://nusmods.com/modules/CS2109S/introduction-to-ai-and-machine-learning)|Introduction to AI and Machine Learning|
+|[CS3223](https://nusmods.com/modules/CS3223/database-systems-implementation)|Database Systems Implementation|
+|[CS4225](https://nusmods.com/modules/CS4225/big-data-systems-for-data-science)|Big Data Systems for Data Science|
+
+## Computer Science and its Math Modules
 
 |Module Code| Title|
 |--|--|
@@ -16,8 +27,8 @@ const FULL_TEXT = `
 |[CS2102](https://nusmods.com/modules/CS2102/database-systems)|**Database Systems**|
 |[CS3230](https://nusmods.com/modules/CS3230/design-and-analysis-of-algorithms)|**Design and Analysis of Algorithm** ⭐|
 
-## Math, Applied Math, and other STEM
-|Module Code|Title
+## Math, Applied Math, and other STEM Modules
+|Module Code|Title|
 |--|--|
 |MA1521|Calculus for Computing|
 |[QF1100](https://nusmods.com/modules/QF1100/introduction-to-quantitative-finance)|**Introduction to Quantitative Finance** ⭐|
