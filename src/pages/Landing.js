@@ -4,6 +4,7 @@ import { Container, Stack } from "@chakra-ui/react";
 
 // Markdown
 const LANDING_TEXT = `
+![github profile pic](https://avatars.githubusercontent.com/u/22293969?v=4)
 # Hi! I'm Arsyad Kamili
 - Undergraduate student at the National University of Singapore
 - Majoring in Computer Science, Specialising in Networks and Distributed Systems, 
