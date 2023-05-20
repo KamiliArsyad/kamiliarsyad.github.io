@@ -1,6 +1,6 @@
 import TextBox from "../components/TextBox";
-import { Container, Stack } from "@chakra-ui/react";
-
+import { Container, Divider, Stack } from "@chakra-ui/react";
+import Milestones from "../components/Timeline";
 
 // Markdown
 const LANDING_TEXT = `
@@ -10,20 +10,31 @@ const LANDING_TEXT = `
 - Majoring in Computer Science, Specialising in Networks and Distributed Systems, 
 Algorithms and Theory, and Database Systems
 - Minoring in Quantitative Finance and Urban Studies
+`;
 
+const LINKS = `
 ## Links
 - [**LinkedIn**](https://www.linkedin.com/in/arsyad-kamili/)
 - [**GitHub**](https://github.com/KamiliArsyad)
 - [**YouTube**](https://youtube.com/c/ArsyadKamili)
-`;
-
+`
 
 export default function Landing() {
   return (
     <div>
-      <Stack spacing={8}>
-        <Container maxW='container.sm' marginTop="10">
+      <Stack spacing={5} align="center">
+        <Container maxW="container.sm" marginTop="10">
           <TextBox text={LANDING_TEXT} />
+        </Container>
+        <Container maxW="container.xl">
+          <Divider colorScheme="black" borderWidth="3px" borderRadius='5' />
+        </Container>
+        <Milestones />
+        <Container maxW="container.xl">
+          <Divider colorScheme="black" borderWidth="3px" borderRadius='5' />
+        </Container>
+        <Container maxW="container.sm" marginTop="10">
+          <TextBox text={LINKS} />
         </Container>
       </Stack>
     </div>
