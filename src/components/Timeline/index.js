@@ -8,8 +8,8 @@ const milestones = [
   {
     id: 1,
     date: "March 2021 - May 2021",
-    title: "Data Analyst Internship @ PT. Ihsan Solusi Informatika",
-    description: `Generated efficient finance analytics report system for a saving and loan cooperative client handling over Rp. 400 billion of 
+    title: "Finance Analyst Intern @ PT. Ihsan Solusi Informatika",
+    description: `Generated efficient finance analytics report pipeline for a saving and loan cooperative client handling over Rp. 400 billion of 
     asset by utilizing Oracle SQL and Python's Pandas library. The main outcome was to efficiently collect millions of rows of data scattered 
     across multiple databases to create a Markov Chain-based transition matrix to assess the probability of default of the loans.`,
   },
