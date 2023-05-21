@@ -29,7 +29,7 @@ const milestones = [
   },
   {
     id: 4,
-    date: "May 2022 - Present",
+    date: "May 2023 - Present",
     title: "Research Assistant @ A*Star Institute of Infocomm Research",
     description: `I am currently part of a team working on the development of a Multi-Sensor Mobile Edge Platform for Integrated Sensing and Communication (ISAC) Co-Optimization, 
       where I am gaining hands-on experience and actively learning about sensor integration, communication optimization, and platform development.`
