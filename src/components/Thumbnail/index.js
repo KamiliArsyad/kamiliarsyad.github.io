@@ -7,21 +7,47 @@ import {
   Avatar,
   useColorModeValue,
   Image,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
-export default function Thumbnail({ title, category, body, author, avatar, date }) {
+export default function Thumbnail({ postListObject }) {
+  const { bgBox, bgBoxHover, headingColor } = useColorModeValue(
+    {
+      bgBox: "white",
+      bgBoxHover: "gray.100",
+      headingColor: "gray.700",
+    },
+    {
+      bgBox: "gray.900",
+      bgBoxHover: "gray.700",
+      headingColor: "white",
+    }
+  );
+
+  try {
+    var { title, author, summary, categories, timestamp, imageURL } =
+      postListObject;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+
+  const { name, picture_url: avatar } = author;
+
+  const date = new Date(timestamp).toLocaleDateString();
+  const minutesToRead = Math.floor((5 * summary.split(" ").length) / 200); // This is random. Later the minutes to read should be calculated from the length of the document
+
   return (
     <Center py={6}>
       <Box
         maxW={"350px"}
         w={"full"}
-        bg={useColorModeValue("white", "gray.900")}
-        boxShadow='lg'
+        bg={bgBox}
+        boxShadow="lg"
         rounded={"md"}
         p={6}
         overflow={"hidden"}
         _hover={{
-          bg:useColorModeValue("gray.100", "gray.700"),
+          bg: bgBoxHover,
           color: "white",
           boxShadow: "dark-lg",
         }}
@@ -33,13 +59,9 @@ export default function Thumbnail({ title, category, body, author, avatar, date 
           mx={-6}
           mb={6}
           pos={"relative"}
-          overflow='hidden'
+          overflow="hidden"
         >
-          <Image
-            src={
-              "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            }
-          />
+          <Image src={imageURL} />
         </Box>
         <Stack>
           <Text
@@ -49,27 +71,23 @@ export default function Thumbnail({ title, category, body, author, avatar, date 
             fontSize={"small"}
             letterSpacing={1.1}
           >
-            {category || "Course Review"}
+            {categories}
           </Text>
-          <Heading
-            color={useColorModeValue("gray.700", "white")}
-            fontSize={"xl"}
-            fontFamily={"body"}
-          >
-            {title || "CS4225 Big Data Systems for Data Science"}
+          <Heading color={headingColor} fontSize={"xl"} fontFamily={"body"}>
+            {title}
           </Heading>
-          <Text color={"gray.500"}>
-            {body || "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."}
-          </Text>
+          <Text color={"gray.500"}>{summary}</Text>
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
-          <Avatar
-            src={avatar || "https://media.licdn.com/dms/image/C5603AQG12FNcv7ZSzQ/profile-displayphoto-shrink_400_400/0/1637668817669?e=1690416000&v=beta&t=ZUgmx6pm_nRmjfoRG8uP_RNRbgFEKPZ9xI5-R8zkadE"}
-            alt={"Author"}
-          />
+          <Avatar src={avatar} alt={"Author"} />
           <Stack direction={"column"} spacing={0} fontSize={"sm"}>
-            <Text color={"gray.900"} fontWeight={600}>{author || "Arsyad Kamili"}</Text>
-            <Text color={"gray.500"}> {date || "Feb 08, 2021"} · 6min read</Text>
+            <Text color={"gray.900"} fontWeight={600}>
+              {name}
+            </Text>
+            <Text color={"gray.500"}>
+              {" "}
+              {date} · {minutesToRead} min read{" "}
+            </Text>
           </Stack>
         </Stack>
       </Box>

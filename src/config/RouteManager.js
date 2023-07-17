@@ -5,6 +5,8 @@ import InvalidLink from "../pages/InvalidLink";
 import InterestsMain from "../pages/Interests/InterestsMain";
 import AcademicsMain from "../pages/Academics/AcademicsMain";
 import Dev from "../pages/Dev";
+import { PostRoute } from "../features/posts/PostRoute";
+import BlogMain from "../pages/Blog/BlogMain";
 
 export default function RouteManager() {
   return (
@@ -14,7 +16,9 @@ export default function RouteManager() {
         <Route path="interests" element={<InterestsMain />} />
         <Route path="academics" element={<AcademicsMain />} />
         {/* Blank page for development */}
-        <Route path="dev" element={<Dev />} />
+        <Route element={<PostRoute />}>
+          <Route path="blog" element={<BlogMain />} />
+        </Route>
       </Route>
       <Route path="*" element={<InvalidLink />} />
     </Routes>
