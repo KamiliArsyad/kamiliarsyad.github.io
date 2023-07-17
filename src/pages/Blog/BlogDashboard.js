@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { usePostContext } from "../../features/posts/PostContext";
 import { fetchPosts } from "../../features/posts/PostServices";
-import { Divider, Grid, Heading, Stack } from "@chakra-ui/react";
+import { Divider, Grid, Heading, Spinner, Stack } from "@chakra-ui/react";
 import Thumbnail from "../../components/Thumbnail";
+import { useNavigate } from "react-router-dom";
 
-export default function BlogMain() {
+export default function BlogDashboard() {
   const { post, dispatch: postDispatch } = usePostContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetch = async () => {
@@ -23,9 +25,28 @@ export default function BlogMain() {
     <Stack direction="column" align="center" marginTop="2rem">
       <Heading marginBottom="2rem"> Blog Posts </Heading>
       <Divider />
-      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+      {post.isLoading && (
+        <Spinner
+          thickness="4px"
+          speed="0.7s"
+          emptyColor="gray.400"
+          color="blue.500"
+          size="xl"
+        />
+      )}
+      <Grid
+        templateColumns={{
+          base: "repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+        }}
+        gap={6}
+      >
         {post.posts.map((post) => (
-          <Thumbnail postListObject={post} />
+          <Thumbnail
+            postListObject={post}
+            onClick={() => navigate(`/blog/${post._id}`)}
+          />
         ))}
       </Grid>
     </Stack>
