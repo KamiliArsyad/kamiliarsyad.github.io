@@ -9,7 +9,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-export default function Thumbnail({ postListObject }) {
+export default function Thumbnail({ postListObject, onClick }) {
   const { bgBox, bgBoxHover, headingColor } = useColorModeValue(
     {
       bgBox: "white",
@@ -34,7 +34,7 @@ export default function Thumbnail({ postListObject }) {
   const { name, picture_url: avatar } = author;
 
   const date = new Date(timestamp).toLocaleDateString();
-  const minutesToRead = Math.floor((5 * summary.split(" ").length) / 200); // This is random. Later the minutes to read should be calculated from the length of the document
+  const minutesToRead = Math.floor(summary.split(" ").length); // This is random. Later the minutes to read should be calculated from the length of the document
 
   return (
     <Center py={6}>
@@ -73,10 +73,12 @@ export default function Thumbnail({ postListObject }) {
           >
             {categories}
           </Text>
-          <Heading color={headingColor} fontSize={"xl"} fontFamily={"body"}>
-            {title}
-          </Heading>
-          <Text color={"gray.500"}>{summary}</Text>
+          <Box className="cursor-pointer" onClick={onClick}>
+            <Heading color={headingColor} fontSize={"xl"} fontFamily={"body"}>
+              {title}
+            </Heading>
+            <Text color={"gray.500"}>{summary}</Text>
+          </Box>
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
           <Avatar src={avatar} alt={"Author"} />
