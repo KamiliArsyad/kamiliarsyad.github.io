@@ -24,7 +24,7 @@ export default function Thumbnail({ postListObject, onClick }) {
   );
 
   try {
-    var { title, author, summary, categories, timestamp, imageURL } =
+    var { title, author, summary, categories, timestamp, imageURL, wordCount } =
       postListObject;
   } catch (error) {
     console.error(error);
@@ -34,7 +34,7 @@ export default function Thumbnail({ postListObject, onClick }) {
   const { name, picture_url: avatar } = author;
 
   const date = new Date(timestamp).toLocaleDateString();
-  const minutesToRead = Math.floor(summary.split(" ").length); // This is random. Later the minutes to read should be calculated from the length of the document
+  const minutesToRead = Math.floor(wordCount / 200);
 
   return (
     <Center py={6}>
