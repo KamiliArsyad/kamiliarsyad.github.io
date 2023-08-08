@@ -1,12 +1,13 @@
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 
 export default function TextBox({ text }) {
   return (
     <div>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={ChakraUIRenderer()} children={text} skipHtml />
+      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={ChakraUIRenderer()} children={text} />
     </div>
   );
 }
