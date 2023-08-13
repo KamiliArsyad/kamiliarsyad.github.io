@@ -10,7 +10,8 @@ export const fetchPosts = async (dispatch) => {
     dispatch({ type: "REQUEST_POSTS" });
 
     const response = await getPosts();
-    const data = await response.data;
+    let data = await response.data;
+    data = sortByDate(data);
 
     if (response.status === 200) {
       dispatch({ type: "POSTS_SUCCESS", payload: data });
@@ -57,3 +58,14 @@ export const fetchPost = async (dispatch, id) => {
 export const clearPostFocus = (dispatch) => {
   dispatch({ type: "CLEAR_POST_FOCUS" });
 };
+
+/**
+ * @description Output a new list of posts sorted by date
+ * @param {*} posts
+ * @returns {Array} Sorted array of posts
+ */
+const sortByDate = (posts) => {
+  return posts.sort((a, b) => {
+    return new Date(b.timestamp) - new Date(a.timestamp);
+  });
+}

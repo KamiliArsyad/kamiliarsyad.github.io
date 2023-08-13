@@ -24,7 +24,7 @@ export default function Thumbnail({ postListObject, onClick }) {
   );
 
   try {
-    var { title, author, summary, categories, timestamp, imageURL, wordCount } =
+    var { title, author, summary, categories, timestamp, imageURL, wordCount, viewCount } =
       postListObject;
   } catch (error) {
     console.error(error);
@@ -35,6 +35,7 @@ export default function Thumbnail({ postListObject, onClick }) {
 
   const date = new Date(timestamp).toLocaleDateString();
   const minutesToRead = Math.floor(wordCount / 200);
+  const views = viewCount;
 
   return (
     <Center py={6}>
@@ -88,7 +89,7 @@ export default function Thumbnail({ postListObject, onClick }) {
             </Text>
             <Text color={"gray.500"}>
               {" "}
-              {date} · {minutesToRead} min read{" "}
+              {date} · {minutesToRead} min read{" "} · {views} views
             </Text>
           </Stack>
         </Stack>
