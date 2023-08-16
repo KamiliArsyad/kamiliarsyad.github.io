@@ -8,6 +8,11 @@ const FULL_TEXT = `
 ## Current Courses
 |Course Code|Title|
 |--|--|
+|[CS2103T](https://nusmods.com/courses/CS2103T/software-engineering)|Software Engineering |
+|[CS4234](https://nusmods.com/courses/CS4234/optimisation-algorithms)|Optimisation Algorithms|
+|[CS3210](https://nusmods.com/courses/CS3210/parallel-computing)|Parallel Computing|
+|[GE3236](https://nusmods.com/courses/GE3236/transport-and-communications)|Transport and Communications|
+|[CS2101](https://nusmods.com/courses/CS2101/effective-communication-for-computing-professionals)|Effective Communication for Computing Professionals|
 
 ## Computer Science and its Math Courses
 |Course Code|Topic|
@@ -16,14 +21,14 @@ const FULL_TEXT = `
 |[CS1231S](https://nusmods.com/courses/CS1231S/discrete-structures)|Discrete Structures|
 |[CS2030S](https://nusmods.com/courses/CS2030S/programming-methodology-ii) | *Programming Methodology II* ⭐|
 |[CS2040S](https://nusmods.com/courses/CS2040S/data-structures-and-algorithms) | Data Structures and Algorithms |
-|[CS2100](https://nusmods.com/courses/CS2100/computer-organisation)|Computer Organization⭐|
+|[CS2100](https://nusmods.com/courses/CS2100/computer-organisation)|*Computer Organization*⭐|
 |[CS2102](https://nusmods.com/courses/CS2102/database-systems)|**Database Systems**|
 |[CS2105](https://nusmods.com/courses/CS2105/introduction-to-computer-networks)|Computer Networks|
 |[CS2109S](https://nusmods.com/courses/CS2109S/introduction-to-ai-and-machine-learning)|**AI and Machine Learning**|
 |[CS2106](https://nusmods.com/courses/CS2106/introduction-to-operating-systems)|Operating Systems|
 |[CS3230](https://nusmods.com/courses/CS3230/design-and-analysis-of-algorithms)|**Design and Analysis of Algorithm** ⭐|
 |[CS3223](https://nusmods.com/courses/CS3223/database-systems-implementation)|**Database Systems Implementation**⭐|
-|[CS4225](https://nusmods.com/courses/CS4225/big-data-systems-for-data-science)|***Big Data Systems for Data Science**⭐|
+|[CS4225](https://nusmods.com/courses/CS4225/big-data-systems-for-data-science)|**Big Data Systems for Data Science**⭐|
 
 ## Math, Applied Math, and other STEM Courses
 |Course Code|Title|

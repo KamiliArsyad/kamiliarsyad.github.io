@@ -26,13 +26,7 @@ export default function Landing() {
         <Container maxW="container.sm" marginTop="10">
           <TextBox text={LANDING_TEXT} />
         </Container>
-        <Container maxW="container.xl">
-          <Divider colorScheme="black" borderWidth="3px" borderRadius='5' />
-        </Container>
         <Milestones />
-        <Container maxW="container.xl">
-          <Divider colorScheme="black" borderWidth="3px" borderRadius='5' />
-        </Container>
         <Container maxW="container.sm" marginTop="10">
           <TextBox text={LINKS} />
         </Container>
