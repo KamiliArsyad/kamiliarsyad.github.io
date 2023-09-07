@@ -263,7 +263,7 @@ const NAV_ITEMS = [
       {
         label: 'Current and Upcoming Projects',
         subLabel: 'Ongoing projects and what I plan to do next',
-        href: '#',
+        href: 'projects',
       },
     ],
   },
