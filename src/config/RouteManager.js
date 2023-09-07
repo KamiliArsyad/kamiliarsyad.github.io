@@ -20,6 +20,7 @@ export default function RouteManager() {
           <Route path="blog" element={<BlogDashboard />} />
           <Route path="blog/:postid" element={<BlogPost />} />
         </Route>
+        <Route path="dev" element={<Dev />} />
       </Route>
       <Route path="*" element={<InvalidLink />} />
     </Routes>
