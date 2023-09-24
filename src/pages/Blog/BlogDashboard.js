@@ -45,7 +45,7 @@ export default function BlogDashboard() {
         {post.posts.map((post) => (
           <Thumbnail
             postListObject={post}
-            onClick={() => navigate(`/blog/${post._id}`)}
+            onClick={() => navigate(`/blog/${post.slug}`)}
           />
         ))}
       </Grid>
