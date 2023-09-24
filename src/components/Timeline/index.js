@@ -27,14 +27,14 @@ const milestones = [
   {
     id: 2,
     date: "May 2021 - August 2021",
-    title: "Employee Trainer @ PT. Ihsan Solusi Informatika",
+    title: "Trainer @ PT. Ihsan Solusi Informatika",
     description: `Trained the employees fundamentals of asynchronous programming and FastAPI, functional programming paradigm, and React.JS to assist the company in 
           transitioning its tech stack to a set of new one heavily involving FastAPI in its backend and ReactJS for its frontend.`,
   },
   {
     id: 3,
     date: "May 2023 - August 2023",
-    title: "Research Assistant @ A*Star Institute of Infocomm Research",
+    title: "Research Intern @ A*Star Institute of Infocomm Research",
     description: `Optimized, pipelined, and parallelized network flow and 
     data transfer algorithms across distributed computer vision and mapping systems in C++ 
     by utilizing the latest papers and publications pertaining to the topic to achieve more 
@@ -45,7 +45,8 @@ const milestones = [
     date: "August 2022 - Present",
     title: "Teaching Assistant @ National University of Singapore",
     description: `I facilitated tutorial and lab sessions, graded assignments, and provided consultations for 8 to 15 students in CS1101S (Programming Methodology) 
-    and CS2030S (Programming Methodology 2), imparting fundamental computer science concepts and functional programming principles in CS1101S, while delving into object-oriented design and advanced functional programming techniques in Java for CS2030S.`,
+    and CS2030S (Programming Methodology 2), imparting fundamental computer science concepts and functional programming principles in CS1101S, while delving into object-oriented design and advanced functional programming techniques in Java for CS2030S.
+    I am now teaching CS2100 on Computer Organization`,
   },
 ];
 
