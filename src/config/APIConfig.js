@@ -1,2 +1,2 @@
-const BASE_URL = "https://archblog-backend-production.up.railway.app/api";
+const BASE_URL = "https://backend.kamiliarsyad.com/api";
 export default BASE_URL;
