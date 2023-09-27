@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { Flex, Heading } from "@chakra-ui/react";
 
 /**
  * PageSpan Props Interface.
@@ -54,22 +55,20 @@ interface PageSpanProps {
  * @returns {ReactElement} PageSpan Component.
  */
 function PageSpan(props: PageSpanProps): ReactElement<PageSpanProps> {
-  const {
-    heading,
-    brief,
-    image,
-    backgroundColor,
-    onClick,
-    isDesktop,
-    redirect,
-    popupContent,
-  } = props;
-
   return (
-    <h1>
-      {heading}
-    </h1>
-  )
+    <Flex
+      alignItems="center"
+      justifyContent="center"
+      width="100%"
+      height="100%"
+      backgroundColor={props.backgroundColor}
+      onClick={props.onClick}
+    >
+      <Heading as="h1" size={props.isDesktop ? "4xl" : "2xl"} color="white">
+        {props.heading}
+      </Heading>
+    </Flex>
+  );
 }
 
 export default PageSpan;
