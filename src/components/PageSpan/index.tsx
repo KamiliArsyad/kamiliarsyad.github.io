@@ -50,12 +50,12 @@ interface PageSpanProps {
   /**
    * The relative path to redirect to when clicking the button.
    */
-  redirect?: string;
+  redirect?: { relativepath: string; title: string };
 
   /**
    * The popup content.
    */
-  popupContent?: any;
+  popupContent?: { title: string; content: ReactElement };
 }
 
 /**
@@ -76,25 +76,58 @@ function PageSpan(props: PageSpanProps): ReactElement<PageSpanProps> {
       onClick={props.onClick}
     >
       <Container margin="5" maxW="container.xl" marginBlock="5">
-        <Stack direction={props.isDesktop ? "row" : "column"} spacing="5">
+        <Stack
+          direction={props.isDesktop ? "row" : "column"}
+          spacing={props.isDesktop ? "5" : "10"}
+        >
           <Stack spacing="10">
-            <Heading size={props.isDesktop ? "2xl" : "xl"} color="white">
+            <Heading
+              size={props.isDesktop ? "2xl" : "xl"}
+              color="white"
+              transition="0.3s ease-in-out"
+              _hover={{ color: "yellow", transform: "scale(1.02)" }}
+            >
               {props.heading}
             </Heading>
             <Heading size={props.isDesktop ? "md" : "sm"} color="white">
               {props.brief}
             </Heading>
-            <Stack direction="row" justifyContent={props.isDesktop ? "none" : "center"} spacing="5">
-              <Button colorScheme="white" borderRadius="full" outlineColor="white">
-                Learn More
-              </Button>
-              <Button colorScheme="white" borderRadius="full" outlineColor="white">
-                Get Started
-              </Button>
+            <Stack
+              direction="row"
+              justifyContent={props.isDesktop ? "none" : "center"}
+              spacing="5"
+            >
+              {props.redirect && (
+                <Button
+                  colorScheme="yellow"
+                  borderRadius="xl"
+                  transition="0.3s ease-in-out"
+                  _hover={{ backgroundColor: "white", color: "black" }}
+                >
+                  {props.redirect.title}
+                </Button>
+              )}
+              {props.popupContent && (
+                <Button
+                  colorScheme="cyan"
+                  borderRadius="xl"
+                  transition="0.3s ease-in-out"
+                  _hover={{ backgroundColor: "white", color: "black" }}
+                >
+                  {props.popupContent.title}
+                </Button>
+              )}
             </Stack>
           </Stack>
-          <Box>
-            <Image src={props.image} />
+          <Box maxW={props.isDesktop ? "30%" : "100%"}>
+            <Image
+              transition="0.3s ease-in-out"
+              _hover={{
+                transform: "scale(1.05)",
+              }}
+              borderRadius="full"
+              src={props.image}
+            />
           </Box>
         </Stack>
       </Container>
