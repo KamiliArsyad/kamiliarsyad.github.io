@@ -23,7 +23,7 @@ export default function BlogDashboard() {
 
   return (
     <Stack direction="column" align="center" marginTop="2rem">
-      <Heading marginBottom="2rem"> Blog Posts </Heading>
+      <Heading marginBottom="2rem" marginTop="2rem"> Blog Posts </Heading>
       <Divider />
       {post.isLoading && (
         <Spinner

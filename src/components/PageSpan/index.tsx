@@ -71,7 +71,7 @@ function PageSpan(props: PageSpanProps): ReactElement<PageSpanProps> {
   return (
     <Flex
       alignItems="center"
-      justifyContent={props.isDesktop ? "space-between" : "center"}
+      justifyContent="center"
       width="100%"
       minH={height}
       backgroundColor={props.backgroundColor}
