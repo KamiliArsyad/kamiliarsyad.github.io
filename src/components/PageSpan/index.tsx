@@ -6,6 +6,8 @@ import {
   Flex,
   Heading,
   Image,
+  Link,
+  LinkBox,
   Stack,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -80,18 +82,20 @@ function PageSpan(props: PageSpanProps): ReactElement<PageSpanProps> {
           direction={props.isDesktop ? "row" : "column"}
           spacing={props.isDesktop ? "5" : "10"}
         >
-          <Stack spacing="10">
+          <Stack
+            spacing={props.isDesktop ? "10" : "5"}
+            minWidth={props.isDesktop ? "70%" : "100%"}
+            maxWidth={props.isDesktop ? "70%" : "100%"}
+          >
             <Heading
               size={props.isDesktop ? "2xl" : "xl"}
               color="white"
-              transition="0.3s ease-in-out"
+              transition="0.2s ease-in-out"
               _hover={{ color: "yellow", transform: "scale(1.02)" }}
             >
               {props.heading}
             </Heading>
-            <Heading size={props.isDesktop ? "md" : "sm"} color="white">
-              {props.brief}
-            </Heading>
+            {props.brief}
             <Stack
               direction="row"
               justifyContent={props.isDesktop ? "none" : "center"}
@@ -103,8 +107,11 @@ function PageSpan(props: PageSpanProps): ReactElement<PageSpanProps> {
                   borderRadius="xl"
                   transition="0.3s ease-in-out"
                   _hover={{ backgroundColor: "white", color: "black" }}
+                  // Redirect to the path specified in the props.
                 >
-                  {props.redirect.title}
+                  <LinkBox as={Link} href={props.redirect.relativepath}>
+                    {props.redirect.title}
+                  </LinkBox>
                 </Button>
               )}
               {props.popupContent && (

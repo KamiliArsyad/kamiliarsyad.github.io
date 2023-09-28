@@ -1,14 +1,20 @@
 import TextBox from "../components/TextBox";
-import { Container, Divider, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Heading,
+  Stack,
+  Text,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import Milestones from "../components/Timeline";
+import PageSpan from "../components/PageSpan";
 
 // Markdown
 const LANDING_TEXT = `
-![github profile pic](https://avatars.githubusercontent.com/u/22293969?v=4)
-# Hi! I'm Arsyad Kamili
-- Undergraduate student at the National University of Singapore
-- Majoring in Computer Science, Specialising in Networks and Distributed Systems, 
-Algorithms and Theory, and Database Systems
+Undergraduate student at the National University of Singapore
+- Majoring in Computer Science; specializing in Parallel Computing,
+Algorithms, and Database Systems
 - Minoring in Quantitative Finance and Urban Studies
 `;
 
@@ -17,20 +23,38 @@ const LINKS = `
 - [**LinkedIn**](https://www.linkedin.com/in/arsyad-kamili/)
 - [**GitHub**](https://github.com/KamiliArsyad)
 - [**YouTube**](https://youtube.com/c/ArsyadKamili)
-`
+`;
 
 export default function Landing() {
+  const isDesktop = useBreakpointValue({ base: false, md: true });
+
   return (
-    <div>
-      <Stack spacing={5} align="center">
-        <Container maxW="container.sm" marginTop="10">
-          <TextBox text={LANDING_TEXT} />
-        </Container>
-        <Milestones />
-        <Container maxW="container.sm" marginTop="10">
-          <TextBox text={LINKS} />
-        </Container>
-      </Stack>
-    </div>
+    <Stack align="center">
+      <PageSpan
+        heading="Hi! I'm Arsyad Kamili"
+        backgroundColor="black"
+        brief={
+          <Stack spacing="2">
+            <Heading size="md" color="white">
+            Undergraduate Computer Science student at the National University of Singapore
+            </Heading>
+            <Heading size="md" color="white">
+            - Specializing in Parallel Computing, Algorithms, and Database Systems
+            </Heading>
+            <Heading size="md" color="white">
+            - Minoring in Quantitative Finance and in Urban Studies
+            </Heading>
+          </Stack>
+        }
+        image="https://avatars.githubusercontent.com/u/22293969?v=4"
+        isDesktop={isDesktop}
+        redirect={{ relativepath: "https://github.com/kamiliarsyad", title: "My Work" }}
+        popupContent={{ title: "What I do", content: "Popup content" }}
+      />
+      <Milestones />
+      <Container maxW="container.sm" marginTop="10">
+        <TextBox text={LINKS} />
+      </Container>
+    </Stack>
   );
 }

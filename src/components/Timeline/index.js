@@ -19,7 +19,7 @@ const milestones = [
   {
     id: 1,
     date: "March 2021 - May 2021",
-    title: "Finance Analyst Intern @ PT. Ihsan Solusi Informatika",
+    title: "Finance Analyst Intern @ Undisclosed IT Firm",
     description: `Generated efficient finance analytics report pipeline for a saving and loan cooperative client handling over Rp. 400 billion of 
     asset by utilizing Oracle SQL and Python's Pandas library. The main outcome was to efficiently collect millions of rows of data scattered 
     across multiple databases to create a Markov Chain-based transition matrix to assess the probability of default of the loans.`,
@@ -27,7 +27,7 @@ const milestones = [
   {
     id: 2,
     date: "May 2021 - August 2021",
-    title: "Trainer @ PT. Ihsan Solusi Informatika",
+    title: "Trainer @ Undisclosed IT Firm",
     description: `Trained the employees fundamentals of asynchronous programming and FastAPI, functional programming paradigm, and React.JS to assist the company in 
           transitioning its tech stack to a set of new one heavily involving FastAPI in its backend and ReactJS for its frontend.`,
   },
@@ -55,8 +55,7 @@ const Milestones = () => {
   const isDesktop = useBreakpointValue({ base: false, md: true });
 
   return (
-    <Container maxWidth="7xl" p={{ base: 2, sm: 10 }}>
-      <Accordion allowMultiple>
+      <Accordion width="100%" allowMultiple>
         <AccordionItem>
           <AccordionButton>
             <Box as="span" flex="1">
@@ -105,7 +104,6 @@ const Milestones = () => {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
-    </Container>
   );
 };
 
