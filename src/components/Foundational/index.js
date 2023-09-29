@@ -3,20 +3,22 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import { Alert } from "./Alert";
 import { useEffect } from "react";
-import { Stack, useDisclosure } from "@chakra-ui/react";
+import { Flex, Stack, useDisclosure } from "@chakra-ui/react";
 
 function Foundational() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  
+
   useEffect(() => {
     onOpen();
   }, []);
 
   return (
     <Stack spacing={0}>
-      <Alert isOpen={isOpen} onClose={onClose} />
+      {/* <Alert isOpen={isOpen} onClose={onClose} /> */}
       <Header />
-      <Outlet />
+      <Flex minHeight="80vh" flexDirection="column">
+        <Outlet />
+      </Flex>
       <Footer />
     </Stack>
   );
