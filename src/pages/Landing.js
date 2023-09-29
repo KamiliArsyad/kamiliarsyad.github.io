@@ -28,6 +28,12 @@ const LINKS = `
 export default function Landing() {
   const isDesktop = useBreakpointValue({ base: false, md: true });
 
+  const HeadComponent = ({ children }) => (
+    <Heading size={isDesktop ? "md" : "xs"} color="white">
+      {children}
+    </Heading>
+  );
+
   return (
     <Stack align="center">
       <PageSpan
@@ -35,20 +41,25 @@ export default function Landing() {
         backgroundColor="black"
         brief={
           <Stack spacing="2">
-            <Heading size="md" color="white">
-            Undergraduate Computer Science student at the National University of Singapore
-            </Heading>
-            <Heading size="md" color="white">
-            - Specializing in Parallel Computing, Algorithms, and Database Systems
-            </Heading>
-            <Heading size="md" color="white">
-            - Minoring in Quantitative Finance and in Urban Studies
-            </Heading>
+            <HeadComponent>
+              Undergraduate Computer Science student at the National University
+              of Singapore
+            </HeadComponent>
+            <HeadComponent>
+              - Specializing in Parallel Computing, Algorithms, and Database
+              Systems
+            </HeadComponent>
+            <HeadComponent>
+              - Minoring in Quantitative Finance and in Urban Studies
+            </HeadComponent>
           </Stack>
         }
         image="https://avatars.githubusercontent.com/u/22293969?v=4"
         isDesktop={isDesktop}
-        redirect={{ relativepath: "https://github.com/kamiliarsyad", title: "My Work" }}
+        redirect={{
+          relativepath: "https://github.com/kamiliarsyad",
+          title: "My Work",
+        }}
         popupContent={{ title: "What I do", content: "Popup content" }}
       />
       <Milestones />

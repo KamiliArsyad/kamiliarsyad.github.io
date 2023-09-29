@@ -3,6 +3,7 @@ import { usePostContext } from "../../features/posts/PostContext";
 import { useEffect } from "react";
 import { clearPostFocus, fetchPost } from "../../features/posts/PostServices";
 import Post from "../../components/Post";
+import { Flex } from "@chakra-ui/react";
 
 export default function BlogPost() {
   const { post, dispatch: postDispatch } = usePostContext();
@@ -25,6 +26,12 @@ export default function BlogPost() {
   }, []);
 
   return (
-    <Post post={post.postFocus} isLoading={post.isLoading} isError={post.isError} />
+    <Flex justifyContent="center" alignItems="center" marginTop="2rem">
+      <Post
+        post={post.postFocus}
+        isLoading={post.isLoading}
+        isError={post.isError}
+      />
+    </Flex>
   );
 }
