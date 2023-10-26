@@ -1,7 +1,16 @@
 // Drawer Item Object
 
 import React, { ReactElement, useState } from "react";
-import { Box, chakra, Flex, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  chakra,
+  Flex,
+  Image,
+  Slide,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 // Dictates what will be shown when the drawer item is hovered
 interface DrawerItemPreview {
@@ -10,8 +19,8 @@ interface DrawerItemPreview {
 
 interface DrawerItemProps {
   title: string;
-  label: string[];
-  image: any;
+  tags: string[];
+  image: string;
   navigation: any;
   onPress: () => void;
   onHover?: () => void;
@@ -20,44 +29,63 @@ interface DrawerItemProps {
 }
 
 function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
-  const { title, label, image, navigation, onPress, preview } = props;
+  const { title, tags, image, navigation, onPress, preview } = props;
   const [hovered, setHovered] = useState(false);
+  const { bgBox, bgBoxHover, headingColor } = useColorModeValue(
+    {
+      bgBox: "white",
+      bgBoxHover: "gray.50",
+      headingColor: "gray.700",
+    },
+    {
+      bgBox: "gray.900",
+      bgBoxHover: "gray.700",
+      headingColor: "white",
+    }
+  );
 
   const handleHover = () => {
     setHovered(!hovered);
   };
 
   return (
-    <Flex
-      bg="#edf3f8"
-      _dark={{
-        bg: "#3e3e3e",
-      }}
-      p={50}
-      w="full"
-      alignItems="center"
-      justifyContent="center"
-    >
+    <>
+      <Slide direction="bottom" in={hovered} style={{ zIndex: 10 }}>
+        <Box
+          p="40px"
+          color="white"
+          mt="4"
+          bg="teal.500"
+          rounded="md"
+          shadow="md"
+        >
+          The quick brown fox jumps over the lazy dog
+          The quick brown fox jumps over the lazy dog
+        </Box>
+      </Slide>
       <Flex
         maxW="md"
+        maxH="sm"
         mx="auto"
         bg="white"
         _dark={{
           bg: "gray.800",
         }}
+        onMouseEnter={handleHover}
+        onMouseLeave={handleHover}
+        _hover={{
+          bg: bgBoxHover,
+          color: "white",
+          boxShadow: "dark-lg",
+        }}
         shadow="lg"
         rounded="lg"
         overflow="hidden"
+        minW="xs"
       >
-        <Box
-          w={1 / 3}
-          bgSize="cover"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')",
-          }}
-        ></Box>
-
+        <Box w={1 / 3}>
+          <Image src={image} alt={title} h="full" w="full" objectFit="cover" />
+        </Box>
         <Box
           w={2 / 3}
           p={{
@@ -65,61 +93,56 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
             md: 4,
           }}
         >
-          <chakra.h1
-            fontSize="2xl"
+          <chakra.h2
+            fontSize="md"
             fontWeight="bold"
             color="gray.800"
             _dark={{
               color: "white",
             }}
           >
-            Backpack
-          </chakra.h1>
-
-          <chakra.p
-            mt={2}
-            fontSize="sm"
-            color="gray.600"
-            _dark={{
-              color: "gray.400",
-            }}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit In odit
-          </chakra.p>
-
-          <HStack
-            spacing={1}
-            display="flex"
-            alignItems="center"
-            mt={2}
-          ></HStack>
-
-          <Flex mt={3} alignItems="center" justifyContent="space-between">
-            <chakra.h1 color="white" fontWeight="bold" fontSize="lg">
-              $220
-            </chakra.h1>
+            {title}
+          </chakra.h2>
+          <Stack direction="column" spacing={1} mt={2}>
+            <Stack direction="row" spacing={3} mt={4}>
+              {tags.map((tag, index) => (
+                <chakra.span
+                  key={index}
+                  fontSize="xs"
+                  fontWeight="bold"
+                  textTransform="uppercase"
+                  color="gray.600"
+                  _dark={{
+                    color: "gray.400",
+                  }}
+                  px={2}
+                  py={1}
+                  bg="gray.200"
+                  rounded="lg"
+                >
+                  {tag}
+                </chakra.span>
+              ))}
+            </Stack>
             <chakra.button
               px={2}
               py={1}
-              bg="white"
+              bg="gray.100"
               fontSize="xs"
               color="gray.900"
               fontWeight="bold"
               rounded="lg"
-              textTransform="uppercase"
               _hover={{
                 bg: "gray.200",
               }}
-              _focus={{
-                bg: "gray.400",
-              }}
+              onClick={navigation}
             >
-              Add to cart
+              Read
             </chakra.button>
-          </Flex>
+          </Stack>
         </Box>
       </Flex>
-    </Flex>
+    </>
   );
 }
 
