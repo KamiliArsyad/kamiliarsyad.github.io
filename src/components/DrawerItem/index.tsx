@@ -70,15 +70,15 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
         _dark={{
           bg: "gray.800",
         }}
+        shadow="sm"
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
         transition="0.2s ease-in-out"
         _hover={{
           bg: bgBoxHover,
           color: "white",
-          boxShadow: "dark-lg",
+          boxShadow: "md"
         }}
-        shadow="lg"
         rounded="lg"
         overflow="hidden"
         minW="xs"
@@ -147,4 +147,4 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
   );
 }
 
-export default DrawerItem;
+export { DrawerItem, DrawerItemProps };
