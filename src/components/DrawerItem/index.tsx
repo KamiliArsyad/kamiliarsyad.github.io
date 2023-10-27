@@ -22,14 +22,14 @@ interface DrawerItemProps {
   tags: string[];
   image: string;
   navigation: any;
-  onPress: () => void;
+  onPress?: () => void;
   onHover?: () => void;
   // Hidden details that will be shown on hover
   preview?: DrawerItemPreview;
 }
 
 function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
-  const { title, tags, image, navigation, onPress, preview } = props;
+  const { title, tags, image, navigation, preview } = props;
   const [hovered, setHovered] = useState(false);
   const { bgBox, bgBoxHover, headingColor } = useColorModeValue(
     {
@@ -59,8 +59,7 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
           rounded="md"
           shadow="md"
         >
-          The quick brown fox jumps over the lazy dog
-          The quick brown fox jumps over the lazy dog
+          {preview?.details}
         </Box>
       </Slide>
       <Flex
@@ -73,6 +72,7 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
         }}
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
+        transition="0.2s ease-in-out"
         _hover={{
           bg: bgBoxHover,
           color: "white",

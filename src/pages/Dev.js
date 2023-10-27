@@ -24,6 +24,7 @@ export default function Dev() {
       tags={["Test", "Test", "Test"]}
       image="https://bit.ly/2Z4KKcF"
       navigation={["Home", "Home", "Home"]}
+      preview={{details: "This is a preview of the article."}}
     />
   );
 }
