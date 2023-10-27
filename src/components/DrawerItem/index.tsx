@@ -64,8 +64,8 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
         </Box>
       </Slide>
       <Flex
-        maxW="md"
-        maxH="sm"
+        maxW="xs"
+        maxH="xs"
         mx="auto"
         bg="white"
         _dark={{
@@ -86,15 +86,16 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
         <Box w={1 / 3}>
           <Image src={image} alt={title} h="full" w="full" objectFit="cover" />
         </Box>
-        <Box
+        <Stack
           w={2 / 3}
+          spacing={0}
           p={{
-            base: 4,
-            md: 4,
+            base: 1,
+            md: 2,
           }}
         >
           <chakra.h2
-            fontSize="md"
+            fontSize="x-small"
             fontWeight="bold"
             color="gray.800"
             _dark={{
@@ -108,7 +109,7 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
               {tags.map((tag, index) => (
                 <chakra.span
                   key={index}
-                  fontSize="xs"
+                  fontSize="xx-small"
                   fontWeight="bold"
                   textTransform="uppercase"
                   color="gray.600"
@@ -128,7 +129,7 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
               px={2}
               py={1}
               bg="gray.100"
-              fontSize="xs"
+              fontSize="xx-small"
               color="gray.900"
               fontWeight="bold"
               rounded="lg"
@@ -140,7 +141,7 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
               Read
             </chakra.button>
           </Stack>
-        </Box>
+        </Stack>
       </Flex>
     </>
   );
