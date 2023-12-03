@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Box, Collapse, Flex, Stack } from "@chakra-ui/react";
+import { Box, Collapse, Divider, Flex, Heading, Stack } from "@chakra-ui/react";
 import { DrawerItem, DrawerItemProps } from "../DrawerItem";
 
 interface BlogDrawerProps {
@@ -15,6 +15,8 @@ function BlogDrawer(props: BlogDrawerProps): ReactElement<BlogDrawerProps> {
     <Box w="100%" overflowY="scroll">
       <Collapse in={isOpen} animateOpacity>
         <Stack spacing={3} align="normal" padding="10px">
+          <Heading size="lg">Check out my latest posts!</Heading>
+          <Divider />
           {content?.map((item, index) => (
             <DrawerItem
               key={index}

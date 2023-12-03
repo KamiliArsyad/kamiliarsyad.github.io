@@ -55,7 +55,6 @@ export default function BlogPost() {
       <SlideFade
         w="100%"
         in={!isDrawerOpen}
-        unmountOnExit
         transition={{ enter: { duration: 0.3 }, exit: { duration: 0.3 } }}
       >
         <Button w="100%" onClick={toggleDrawer}>

@@ -44,8 +44,8 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
     }
   );
 
-  const handleHover = () => {
-    setHovered(!hovered);
+  const handleHover = (status: boolean) => {
+    setHovered(status);
   };
 
   return (
@@ -76,8 +76,8 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
           bg: "gray.800",
         }}
         boxShadow="md"
-        onMouseEnter={handleHover}
-        onMouseLeave={handleHover}
+        onMouseEnter={() => handleHover(true)}
+        onMouseLeave={() => handleHover(false)}
         transition="0.2s ease-in-out"
         _hover={{
           bg: bgBoxHover,
