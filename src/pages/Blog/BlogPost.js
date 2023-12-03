@@ -16,24 +16,16 @@ import {
   Slide,
   SlideFade,
   Stack,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { BlogDrawer } from "../../components/BlogDrawer";
-
-const postToDrawerItem = (post) => {
-  return {
-    title: post.title,
-    tags: [post.categories],
-    image: post.imageURL,
-    navigation: post.slug,
-    preview: { details: post.summary + "..." },
-  };
-};
 
 export default function BlogPost() {
   const { post, dispatch: postDispatch } = usePostContext();
   const { postid } = useParams();
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
   const navigate = useNavigate();
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
 
@@ -70,18 +62,18 @@ export default function BlogPost() {
           Toggle Drawer
         </Button>
       </SlideFade>
-      <Flex direction="row">
+      <Flex direction={isMobile ? "column-reverse" : "row"}>
         <Post
           post={post.postFocus}
           isLoading={post.isPostFocusLoading}
           isError={post.isError}
         />
         <Stack
-          w={isDrawerOpen ? 1 / 4 : 0}
+          w={isDrawerOpen ? (isMobile ? "100%" : 1 / 4) : 0}
+          h={isDrawerOpen ? "100%" : 0}
           animation="slideInRight"
           overflow="hidden"
           transition="width 0.3s ease-in-out"
-          minH="xl"
         >
           <Button onClick={toggleDrawer}>Toggle Drawer</Button>
           <BlogDrawer
