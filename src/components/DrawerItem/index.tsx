@@ -50,6 +50,10 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
 
   return (
     <>
+      {/* 
+        Slide is used to animate the preview box when the user hovers over the drawer item.
+        The preview box will slide in from the bottom.
+       */}
       <Slide direction="bottom" in={hovered} style={{ zIndex: 10 }}>
         <Box
           p="40px"
@@ -62,6 +66,7 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
           {preview?.details}
         </Box>
       </Slide>
+
       <Flex
         maxW="xs"
         maxH="xs"
@@ -70,14 +75,14 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
         _dark={{
           bg: "gray.800",
         }}
-        shadow="sm"
+        boxShadow="md"
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
         transition="0.2s ease-in-out"
         _hover={{
           bg: bgBoxHover,
           color: "white",
-          boxShadow: "md"
+          boxShadow: "lg"
         }}
         rounded="lg"
         overflow="hidden"
@@ -138,7 +143,7 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
               }}
               onClick={navigation}
             >
-              Read
+              Read Post
             </chakra.button>
           </Stack>
         </Stack>
