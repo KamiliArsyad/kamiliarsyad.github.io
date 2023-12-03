@@ -62,12 +62,15 @@ export default function BlogPost() {
           Toggle Drawer
         </Button>
       </SlideFade>
+
       <Flex direction={isMobile ? "column-reverse" : "row"}>
         <Post
           post={post.postFocus}
           isLoading={post.isPostFocusLoading}
           isError={post.isError}
         />
+
+        {/* Drawer Items */}
         <Stack
           w={isDrawerOpen ? (isMobile ? "100%" : 1 / 4) : 0}
           h={isDrawerOpen ? "100%" : 0}
@@ -88,7 +91,6 @@ export default function BlogPost() {
                   image: post.imageURL,
                   navigation: () => {
                     navigate(`/blog/${post.slug}`);
-                    toggleDrawer();
                   },
                   preview: { details: post.summary + "..." },
                 };
