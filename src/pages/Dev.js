@@ -35,7 +35,7 @@ export default function Dev() {
         navigation={["Home", "Home", "Home"]}
         preview={{ details: "This is a preview of the article." }}
       /> */}
-      <Button onClick={toggleDrawer}>Open Drawer</Button>
+      <Button onClick={toggleDrawer}>Toggle Drawer</Button>
       <Flex direction="row">
         <Post post={{ title: "Test", body: "Test" }} />
         <Stack

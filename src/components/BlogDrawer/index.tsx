@@ -12,7 +12,7 @@ function BlogDrawer(props: BlogDrawerProps): ReactElement<BlogDrawerProps> {
   const { isOpen, content } = props;
 
   return (
-    <Box w="100%" overflowY="scroll" style={{ position: "fixed" }}>
+    <Box w="100%" overflowY="scroll">
       <Collapse in={isOpen} animateOpacity>
         <Stack spacing={3} align="normal" padding="10px">
           {content?.map((item, index) => (
