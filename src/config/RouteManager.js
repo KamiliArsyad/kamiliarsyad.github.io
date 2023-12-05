@@ -9,6 +9,7 @@ import { PostRoute } from "../features/posts/PostRoute";
 import BlogDashboard from "../pages/Blog/BlogDashboard";
 import BlogPost from "../pages/Blog/BlogPost";
 import ProjectsMain from "../pages/Projects/ProjectsMain";
+import MDEditor from "../pages/Projects/MDEditor";
 
 export default function RouteManager() {
   return (
@@ -17,7 +18,7 @@ export default function RouteManager() {
         <Route path="" element={<Landing />} />
         <Route path="interests" element={<InterestsMain />} />
         <Route path="projects" element={<ProjectsMain />} />
-        <Route path="projects/online-markdown-editor" element={<Dev />} />
+        <Route path="projects/online-markdown-editor" element={<MDEditor />} />
         <Route path="academics" element={<AcademicsMain />} />
         <Route element={<PostRoute />}>
           <Route path="blog" element={<BlogDashboard />} />

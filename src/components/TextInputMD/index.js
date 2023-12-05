@@ -32,7 +32,7 @@ export default function TextInputMD() {
       >
         <Box h="100%" w="50%" flex="1">
           <Textarea
-            placeholder="Enter Markdown here"
+            placeholder={text}
             resize="none"
             h="100%"
             onChange={handleChange}
