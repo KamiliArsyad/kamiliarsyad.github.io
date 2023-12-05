@@ -34,7 +34,7 @@ export default function TextInputMD() {
           <Textarea
             placeholder={text}
             resize="none"
-            h="100%"
+            h="70vh"
             onChange={handleChange}
           />
         </Box>
