@@ -9,12 +9,19 @@ import { styles } from "./styles";
 // Component style overrides
 import Button from "./components/button";
 
+const Divider = {
+  baseStyle: {
+    borderColor: "gray.400",
+  },
+};
+
 const overrides = {
   styles,
   // Other foundational style overrides go here
   components: {
     Button,
     // Other components go here
+    Divider,
   },
 };
 
