@@ -2,6 +2,7 @@ import TextBox from "../components/TextBox";
 import {
   Box,
   Container,
+  Divider,
   Heading,
   Stack,
   Text,
@@ -19,7 +20,6 @@ Algorithms, and Database Systems
 `;
 
 const LINKS = `
-## Links
 - [**LinkedIn**](https://www.linkedin.com/in/arsyad-kamili/)
 - [**GitHub**](https://github.com/KamiliArsyad)
 - [**YouTube**](https://youtube.com/c/ArsyadKamili)
@@ -35,7 +35,7 @@ export default function Landing() {
   );
 
   return (
-    <Stack align="center">
+    <Stack align="center" spacing="0">
       <PageSpan
         heading="Hi! I'm Arsyad Kamili"
         backgroundColor="black"
@@ -62,10 +62,30 @@ export default function Landing() {
         }}
         popupContent={{ title: "What I do", content: "Popup content" }}
       />
-      <Milestones />
-      <Container maxW="container.sm" marginTop="10">
-        <TextBox text={LINKS} />
-      </Container>
+      <Stack direction={isDesktop ? "row" : "column"} spacing="3" width="100%" padding="5">
+        <Milestones />
+        <Container
+          maxW="container.sm"
+          maxH="48"
+          marginTop="10"
+          width={isDesktop ? "30%" : "100%"}
+          backgroundColor="white"
+          borderRadius="xl"
+          boxShadow="lg"
+          padding="3"
+          align="center"
+          transition="all 0.2s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+          }}
+        >
+          <Heading as="h3">
+            Links
+          </Heading>
+          <Divider marginTop="3" marginBottom="3" />
+          <TextBox text={LINKS} />
+        </Container>
+      </Stack>
     </Stack>
   );
 }
