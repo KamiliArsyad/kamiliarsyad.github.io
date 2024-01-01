@@ -8,12 +8,8 @@ import {
 } from "../../features/posts/PostServices";
 import Post from "../../components/Post";
 import {
-  Box,
   Button,
-  Collapse,
-  Fade,
   Flex,
-  Slide,
   SlideFade,
   Stack,
   useBreakpointValue,
