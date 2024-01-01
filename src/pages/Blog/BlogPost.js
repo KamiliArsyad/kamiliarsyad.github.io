@@ -57,7 +57,7 @@ export default function BlogPost() {
         in={!isDrawerOpen}
         transition={{ enter: { duration: 0.3 }, exit: { duration: 0.3 } }}
       >
-        <Button w="100%" onClick={toggleDrawer}>
+        <Button w="100%" onClick={toggleDrawer} bgColor="#FFE5D1" _hover={{ bgColor: "#fff5ed" }}>
           Toggle Drawer
         </Button>
       </SlideFade>
@@ -76,13 +76,16 @@ export default function BlogPost() {
           animation="slideInRight"
           overflow="hidden"
           transition="width 0.3s ease-in-out"
+          paddingRight={isMobile ? 0 : 4}
         >
-          <Button onClick={toggleDrawer}>Toggle Drawer</Button>
+          <Button onClick={toggleDrawer} bgColor="#FFE5D1" _hover={{
+            bgColor: "#fff5ed"
+          }}>Toggle Drawer</Button>
           <BlogDrawer
             isOpen={isDrawerOpen}
             content={post.posts
               .filter((post) => post.slug !== postid)
-              .slice(0, post.posts.length > 3 ? 3 : post.posts.length)
+              .slice(0, post.posts.length > 4 ? 4 : post.posts.length)
               .map((post) => {
                 return {
                   title: post.title,
