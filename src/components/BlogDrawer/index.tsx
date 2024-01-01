@@ -14,7 +14,7 @@ function BlogDrawer(props: BlogDrawerProps): ReactElement<BlogDrawerProps> {
   return (
     <Box w="100%" overflowY="scroll">
       <Collapse in={isOpen} animateOpacity>
-        <Stack spacing={3} align="normal" padding="10px">
+        <Stack spacing={3} align="center" padding="10px">
           <Heading size="lg">Check out my latest posts!</Heading>
           <Divider />
           {content?.map((item, index) => (
