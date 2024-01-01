@@ -59,7 +59,7 @@ function DrawerItem(props: DrawerItemProps): ReactElement<DrawerItemProps> {
           p="40px"
           color="white"
           mt="4"
-          bg="teal.500"
+          bg="#86615c"
           rounded="md"
           shadow="md"
         >
