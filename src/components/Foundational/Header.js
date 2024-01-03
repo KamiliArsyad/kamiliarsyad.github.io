@@ -3,7 +3,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -270,9 +269,9 @@ const NAV_ITEMS = [
     label: "Projects",
     children: [
       {
-        label: "Past Work",
+        label: "Past Works",
         subLabel: "My previous projects",
-        href: "#",
+        href: "/past-works",
       },
       {
         label: "Current and Upcoming Projects",

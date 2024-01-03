@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Milestones from "../components/Timeline";
 import PageSpan from "../components/PageSpan";
+import { useNavigate } from "react-router-dom";
 
 // Markdown
 const LANDING_TEXT = `
@@ -27,6 +28,7 @@ const LINKS = `
 
 export default function Landing() {
   const isDesktop = useBreakpointValue({ base: false, md: true });
+  const navigate = useNavigate();
 
   const HeadComponent = ({ children }) => (
     <Heading size={isDesktop ? "md" : "xs"} color="white">
@@ -58,9 +60,8 @@ export default function Landing() {
         isDesktop={isDesktop}
         redirect={{
           relativepath: "https://github.com/kamiliarsyad",
-          title: "My Work",
+          title: "My Works",
         }}
-        popupContent={{ title: "What I do", content: "Popup content" }}
       />
       <Stack direction={isDesktop ? "row" : "column"} spacing="3" width="100%" padding="5">
         <Milestones />
