@@ -29,6 +29,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
+  const navigate = useNavigate();
 
   return (
     <Box>
@@ -61,6 +62,8 @@ export default function Header() {
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("white", "white")}
+            onClick={() => navigate("/")}
+            _hover={{ cursor: "pointer" }}
           >
             Hi!
           </Text>
