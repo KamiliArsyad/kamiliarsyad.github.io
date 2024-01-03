@@ -27,17 +27,22 @@ export const Card = ({ id, title, description, date }) => {
     <HStack
       flex={1}
       p={{ base: 3, sm: 6 }}
-      bg={useColorModeValue("gray.100", "gray.800")}
+      bg={useColorModeValue("#afe0ce", "gray.800")}
       spacing={5}
-      rounded="lg"
+      rounded="3xl"
       alignItems="center"
       pos="relative"
+      boxShadow="lg"
+      transition="all 0.2s ease-in-out"
+      _hover={{
+        boxShadow: "xl",
+      }}
       _before={{
         content: `""`,
         w: "0",
         h: "0",
         borderColor: `transparent ${useColorModeValue(
-          "#edf2f6",
+          "#afe0ce",
           "#1a202c"
         )} transparent`,
         borderStyle: "solid",
@@ -49,7 +54,7 @@ export const Card = ({ id, title, description, date }) => {
       }}
     >
       <Box>
-        <Text fontSize="lg" color={isEvenId ? "teal.400" : "blue.400"}>
+        <Text fontSize="lg" color={isEvenId ? "#86615c" : "#0a128"}>
           {date}
         </Text>
 

@@ -53,8 +53,11 @@ export default function Post({ post }) {
     <Container
       maxW={{ base: "container.sm", md: "container.md", lg: "container.md" }}
       py={6}
+      bg="white"
+      boxShadow="xl"
+      borderRadius="xl"
     >
-      <Stack>
+      <Stack margin="5">
         {isCourseReview(post) && (
           <>
             <CourseReviewStats post={post} />

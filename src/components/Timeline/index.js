@@ -55,9 +55,9 @@ const Milestones = () => {
   const isDesktop = useBreakpointValue({ base: false, md: true });
 
   return (
-      <Accordion width="100%" allowMultiple>
+      <Accordion width="100%" allowMultiple borderColor="transparent">
         <AccordionItem>
-          <AccordionButton>
+          <AccordionButton borderRadius="xl" _focus={{ boxShadow: "none" }}>
             <Box as="span" flex="1">
               <chakra.h3
                 fontSize="4xl"

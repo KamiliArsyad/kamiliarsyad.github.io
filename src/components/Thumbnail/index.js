@@ -47,6 +47,7 @@ export default function Thumbnail({ postListObject, onClick }) {
         rounded={"md"}
         p={6}
         overflow={"hidden"}
+        transition="all 0.2s ease-in-out"
         _hover={{
           bg: bgBoxHover,
           color: "white",

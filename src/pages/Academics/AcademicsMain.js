@@ -66,12 +66,19 @@ A list of courses that I deemed irrelevant but I have taken anyway
 
 export default function AcademicsMain() {
   return (
-    <div>
-      <Stack spacing={8}>
-        <Container maxW='container.sm' marginTop="10" marginBottom="10">
-          <TextBox text={FULL_TEXT} />
-        </Container>
-      </Stack>
-    </div>
+    <Stack spacing={8}>
+      <Container
+        maxW="container.md"
+        marginTop="10"
+        marginBottom="10"
+        bg="white"
+        boxShadow="xl"
+        borderRadius="xl"
+        padding="5"
+        align="center"
+      >
+        <TextBox text={FULL_TEXT} />
+      </Container>
+    </Stack>
   );
 }

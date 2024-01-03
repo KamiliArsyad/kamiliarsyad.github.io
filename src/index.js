@@ -4,7 +4,7 @@ import './index.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import RouteManager from './config/RouteManager';
 import { BrowserRouter } from 'react-router-dom';
-import { theme } from '@chakra-ui/react';
+import { theme } from './theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

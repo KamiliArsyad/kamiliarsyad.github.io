@@ -1,7 +1,14 @@
 import { useEffect } from "react";
 import { usePostContext } from "../../features/posts/PostContext";
 import { fetchPosts } from "../../features/posts/PostServices";
-import { Divider, Grid, Heading, Spinner, Stack } from "@chakra-ui/react";
+import {
+  Divider,
+  Grid,
+  GridItem,
+  Heading,
+  Spinner,
+  Stack,
+} from "@chakra-ui/react";
 import Thumbnail from "../../components/Thumbnail";
 import { useNavigate } from "react-router-dom";
 
@@ -23,7 +30,10 @@ export default function BlogDashboard() {
 
   return (
     <Stack direction="column" align="center" marginTop="2rem">
-      <Heading marginBottom="2rem" marginTop="2rem"> Blog Posts </Heading>
+      <Heading marginBottom="2rem" marginTop="2rem">
+        {" "}
+        Blog Posts{" "}
+      </Heading>
       <Divider />
       {post.isLoading && (
         <Spinner
@@ -43,10 +53,12 @@ export default function BlogDashboard() {
         gap={6}
       >
         {post.posts.map((post) => (
-          <Thumbnail
-            postListObject={post}
-            onClick={() => navigate(`/blog/${post.slug}`)}
-          />
+          <GridItem>
+            <Thumbnail
+              postListObject={post}
+              onClick={() => navigate(`/blog/${post.slug}`)}
+            />
+          </GridItem>
         ))}
       </Grid>
     </Stack>
