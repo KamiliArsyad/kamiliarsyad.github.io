@@ -17,7 +17,7 @@ const APP = (
   </React.StrictMode>
 );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = document.getElementById('root');
 
 if (root.hasChildNodes()) {
   hydrate(APP, root);
