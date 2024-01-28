@@ -62,5 +62,9 @@
       "--no-sandbox",
       "--disable-setuid-sandbox"
     ]
+  },
+  "snap": {
+    "delay": 15000,
+    "timeout": 60000
   }
 }
