@@ -9,6 +9,7 @@ import {
   Spinner,
   Stack,
 } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 import Thumbnail from "../../components/Thumbnail";
 import { useNavigate } from "react-router-dom";
 
@@ -29,38 +30,50 @@ export default function BlogDashboard() {
   }, []);
 
   return (
-    <Stack direction="column" align="center" marginTop="2rem">
-      <Heading marginBottom="2rem" marginTop="2rem">
-        {" "}
-        Blog Posts{" "}
-      </Heading>
-      <Divider />
-      {post.isLoading && (
-        <Spinner
-          thickness="4px"
-          speed="0.7s"
-          emptyColor="gray.400"
-          color="blue.500"
-          size="xl"
+    <>
+      <Helmet>
+        <title>Blog Posts</title>
+        <meta
+          name="description"
+          content="A collection of blog, project, and course review posts by Arsyad Kamili"
         />
-      )}
-      <Grid
-        templateColumns={{
-          base: "repeat(1, 1fr)",
-          md: "repeat(2, 1fr)",
-          lg: "repeat(3, 1fr)",
-        }}
-        gap={6}
-      >
-        {post.posts.map((post) => (
-          <GridItem>
-            <Thumbnail
-              postListObject={post}
-              onClick={() => navigate(`/blog/${post.slug}`)}
-            />
-          </GridItem>
-        ))}
-      </Grid>
-    </Stack>
+      </Helmet>
+      <Stack direction="column" align="center" marginTop="2rem">
+        <Heading marginBottom="2rem" marginTop="2rem">
+          {" "}
+          Blog Posts{" "}
+        </Heading>
+        <Divider />
+        {post.isLoading && (
+          <Spinner
+            thickness="4px"
+            speed="0.7s"
+            emptyColor="gray.400"
+            color="blue.500"
+            size="xl"
+          />
+        )}
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(3, 1fr)",
+          }}
+          gap={6}
+        >
+          {post.posts.map((post) => (
+            <GridItem>
+              <Thumbnail
+                postListObject={post}
+                onClick={() => navigate(`/blog/${post.slug}`)}
+              />
+
+              {/* Invisible link for SEO */}
+              <a href={`/blog/${post.slug}`}></a>
+            </GridItem>
+          ))}
+        </Grid>
+      </Stack>
+    </>
   );
 }

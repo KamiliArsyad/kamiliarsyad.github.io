@@ -42,11 +42,17 @@ const milestones = [
   },
   {
     id: 4,
-    date: "August 2022 - Present",
+    date: "August 2022 - November 2023",
     title: "Teaching Assistant @ National University of Singapore",
     description: `I facilitated tutorial and lab sessions, graded assignments, and provided consultations for 8 to 15 students in CS1101S (Programming Methodology) 
     and CS2030S (Programming Methodology 2), imparting fundamental computer science concepts and functional programming principles in CS1101S, while delving into object-oriented design and advanced functional programming techniques in Java for CS2030S.
     I am now teaching CS2100 on Computer Organization`,
+  },
+  {
+    id: 5,
+    date: "December 2023 - Present",
+    title: "Software Engineer Intern @ ShopBack",
+    description: `Working to develop and maintain the company's Business Development platform`,
   },
 ];
 
