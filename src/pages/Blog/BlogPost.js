@@ -51,13 +51,13 @@ export default function BlogPost() {
     <>
       <Helmet>
         <title>{post.postFocus.title}</title>
-        <meta name="description" content={post.postFocus.summary} />
+        <meta name="description" content={post.postFocus.body} />
         <meta property="og:title" content={post.postFocus.title} />
-        <meta property="og:description" content={post.postFocus.summary} />
+        <meta property="og:description" content={post.postFocus.body} />
         <meta property="og:image" content={post.postFocus.imageURL} />
         <meta property="og:url" content={window.location.href} />
         <meta name="twitter:title" content={post.postFocus.title} />
-        <meta name="twitter:description" content={post.postFocus.summary} />
+        <meta name="twitter:description" content={post.postFocus.body} />
         <meta name="twitter:image" content={post.postFocus.imageURL} />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
