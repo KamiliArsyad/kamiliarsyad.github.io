@@ -8,7 +8,6 @@ import {
   Divider,
   Heading,
   Link,
-  SimpleGrid,
   Stack,
   Tag,
   Text,
