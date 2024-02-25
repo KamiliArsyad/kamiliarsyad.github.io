@@ -10,6 +10,8 @@ import BlogDashboard from "../pages/Blog/BlogDashboard";
 import BlogPost from "../pages/Blog/BlogPost";
 import ProjectsMain from "../pages/Projects/ProjectsMain";
 import MDEditor from "../pages/Projects/MDEditor";
+import InstantCell from "../pages/Projects/InstantCell";
+import { ICTRoute } from "../features/instantCellTable/ICTRoute";
 
 export default function RouteManager() {
   return (
@@ -19,6 +21,9 @@ export default function RouteManager() {
         <Route path="interests" element={<InterestsMain />} />
         <Route path="projects" element={<ProjectsMain />} />
         <Route path="projects/online-markdown-editor" element={<MDEditor />} />
+        <Route element={<ICTRoute />}>
+          <Route path="projects/instant-cell" element={<InstantCell />} />
+        </Route>
         <Route path="academics" element={<AcademicsMain />} />
         <Route element={<PostRoute />}>
           <Route path="blog" element={<BlogDashboard />} />
