@@ -50,66 +50,64 @@ export default function InstantCell() {
       padding="5"
       align="center"
     >
-      <Stack spacing={4}>
-        <Heading as="h1" size="lg" mb={4}>
-          Instant Cell Table
-        </Heading>
-        <Table variant="simple">
-          <Thead>
-            <Tr>
-              <Th>C1</Th>
-              <Th>C2</Th>
-              <Th>C3</Th>
-              <Th>C4</Th>
-              {/* Additional TH for actions like Delete Row */}
-              <Th>Actions</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {table.rows.map((row, rowIndex) => (
-              <Tr key={`row-${rowIndex}`}>
-                {row.cells.map((cell, cellIndex) => (
-                  <Td key={`cell-${rowIndex}-${cellIndex}`}>
-                    <Editable
-                      defaultValue={cell.value?.toString() || "-empty-"}
-                      onSubmit={(newValue) =>
-                        handleCellSubmit(row._id, cell.columnName, newValue)
-                      }
-                    >
-                      <EditablePreview />
-                      <EditableInput />
-                    </Editable>
-                  </Td>
-                ))}
-                <Td>
-                  <Button
-                    size="sm"
-                    colorScheme="red"
-                    onClick={() => removeRow(dispatch, row._id)}
+      <Heading as="h1" size="lg" mb={4}>
+        Instant Cell Table
+      </Heading>
+      <Table variant="simple">
+        <Thead>
+          <Tr>
+            <Th>C1</Th>
+            <Th>C2</Th>
+            <Th>C3</Th>
+            <Th>C4</Th>
+            {/* Additional TH for actions like Delete Row */}
+            <Th>Actions</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {table.rows.map((row, rowIndex) => (
+            <Tr key={`row-${rowIndex}`}>
+              {row.cells.map((cell, cellIndex) => (
+                <Td key={`cell-${rowIndex}-${cellIndex}`}>
+                  <Editable
+                    defaultValue={cell.value?.toString() || "-empty-"}
+                    onSubmit={(newValue) =>
+                      handleCellSubmit(row._id, cell.columnName, newValue)
+                    }
                   >
-                    Delete
-                  </Button>
+                    <EditablePreview />
+                    <EditableInput />
+                  </Editable>
                 </Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
-        <Button
-          colorScheme="teal"
-          size="md"
-          onClick={() =>
-            createRow(dispatch, [
-              { columnName: "C1", value: "" },
-              { columnName: "C2", value: "" },
-              { columnName: "C3", value: "" },
-              { columnName: "C4", value: "" },
-            ])
-          }
-          mt={4}
-        >
-          Add Row
-        </Button>
-      </Stack>
+              ))}
+              <Td>
+                <Button
+                  size="sm"
+                  colorScheme="red"
+                  onClick={() => removeRow(dispatch, row._id)}
+                >
+                  Delete
+                </Button>
+              </Td>
+            </Tr>
+          ))}
+        </Tbody>
+      </Table>
+      <Button
+        colorScheme="teal"
+        size="md"
+        onClick={() =>
+          createRow(dispatch, [
+            { columnName: "C1", value: "" },
+            { columnName: "C2", value: "" },
+            { columnName: "C3", value: "" },
+            { columnName: "C4", value: "" },
+          ])
+        }
+        mt={4}
+      >
+        Add Row
+      </Button>
     </Container>
   );
 }
