@@ -20,6 +20,10 @@ import {
   editCell,
 } from "../../features/instantCellTable/ICTServices";
 
+/**
+ * POC for Instant Cell Table
+ * @returns {JSX.Element} InstantCell component
+ */
 export default function InstantCell() {
   const { table, dispatch } = useICTContext();
 
