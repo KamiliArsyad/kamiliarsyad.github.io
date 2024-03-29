@@ -66,7 +66,7 @@ const projects = [
     description:
       "Empowering small business owners to digitalize their businesses",
     url: "https://github.com/florentianayuwono/DigitalIT",
-    tags: ["React", "Node.js", "Express", "PosgreSQL", "Web Development"],
+    tags: ["React", "Node.js", "Express", "PosgtreSQL", "Web Development"],
   },
 ];
 
