@@ -14,6 +14,7 @@ import {
   Wrap,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Helmet } from "react-helmet";
 
 // List of projects
 const projects = [
@@ -65,7 +66,7 @@ const projects = [
     description:
       "Empowering small business owners to digitalize their businesses",
     url: "https://github.com/florentianayuwono/DigitalIT",
-    tags: ["React", "Node.js", "Express", "PostgreSQL", "Web Development"],
+    tags: ["React", "Node.js", "Express", "PosgreSQL", "Web Development"],
   },
 ];
 
@@ -112,18 +113,27 @@ const ProjectCard = ({ title, description, url, tags }) => {
 
 export default function ProjectsMain() {
   return (
-    <Container maxW="container.lg" py={12}>
-      <Wrap justify="center" spacing={4}>
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            description={project.description}
-            url={project.url}
-            tags={project.tags}
-          />
-        ))}
-      </Wrap>
-    </Container>
+    <>
+      <Helmet>
+        <title>Projects</title>
+        <meta
+          name="description"
+          content="A list of projects I'm working on"
+        />
+      </Helmet>
+      <Container maxW="container.lg" py={12}>
+        <Wrap justify="center" spacing={4}>
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              url={project.url}
+              tags={project.tags}
+            />
+          ))}
+        </Wrap>
+      </Container>
+    </>
   );
 }

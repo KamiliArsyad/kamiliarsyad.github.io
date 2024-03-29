@@ -1,5 +1,6 @@
 import TextBox from "../../components/TextBox";
 import { Container, Stack } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 
 const FULL_TEXT = `
 # Courses Taken
@@ -8,11 +9,7 @@ const FULL_TEXT = `
 ## Current Courses
 |Course Code|Title|
 |--|--|
-|[CS2103T](https://nusmods.com/courses/CS2103T/software-engineering)|Software Engineering |
-|[CS4234](https://nusmods.com/courses/CS4234/optimisation-algorithms)|Optimisation Algorithms|
-|[CS3210](https://nusmods.com/courses/CS3210/parallel-computing)|Parallel Computing|
-|[GE3236](https://nusmods.com/courses/GE3236/transport-and-communications)|Transport and Communications|
-|[CS2101](https://nusmods.com/courses/CS2101/effective-communication-for-computing-professionals)|Effective Communication for Computing Professionals|
+|[CS4221](https://nusmods.com/courses/CS4221/database-applications-design-and-tuning)|**Database Applications Design and Tuning**|
 
 ## Computer Science and its Math Courses
 |Course Code|Topic|
@@ -23,12 +20,15 @@ const FULL_TEXT = `
 |[CS2040S](https://nusmods.com/courses/CS2040S/data-structures-and-algorithms) | Data Structures and Algorithms |
 |[CS2100](https://nusmods.com/courses/CS2100/computer-organisation)|*Computer Organization*⭐|
 |[CS2102](https://nusmods.com/courses/CS2102/database-systems)|**Database Systems**|
+|[CS2103T](https://nusmods.com/courses/CS2103T/software-engineering)|Software Engineering ⭐|
 |[CS2105](https://nusmods.com/courses/CS2105/introduction-to-computer-networks)|Computer Networks|
 |[CS2109S](https://nusmods.com/courses/CS2109S/introduction-to-ai-and-machine-learning)|**AI and Machine Learning**|
 |[CS2106](https://nusmods.com/courses/CS2106/introduction-to-operating-systems)|Operating Systems|
+|[CS3210](https://nusmods.com/courses/CS3210/parallel-computing)|**Parallel Computing** ⭐|
 |[CS3230](https://nusmods.com/courses/CS3230/design-and-analysis-of-algorithms)|**Design and Analysis of Algorithm** ⭐|
 |[CS3223](https://nusmods.com/courses/CS3223/database-systems-implementation)|**Database Systems Implementation**⭐|
 |[CS4225](https://nusmods.com/courses/CS4225/big-data-systems-for-data-science)|**Big Data Systems for Data Science**⭐|
+|[CS4234](https://nusmods.com/courses/CS4234/optimisation-algorithms)|**Optimisation Algorithms**|
 
 ## Math, Applied Math, and other STEM Courses
 |Course Code|Title|
@@ -45,6 +45,7 @@ const FULL_TEXT = `
 |GESS1014|Islam and Contemporary Malay Society ⭐|
 |[RE1701](https://nusmods.com/courses/RE1701/urban-land-use-and-development)|Urban Land Use and Development|
 |[GE3204](https://nusmods.com/courses/GE3204/cities-and-regions-planning-for-change)|**Cities and Regions: Planning for Change**⭐⭐|
+|[GE3236](https://nusmods.com/courses/GE3236/transport-and-communications)|Transport and Communications ⭐⭐|
 |||
 
 ## non-relevant
@@ -53,6 +54,7 @@ A list of courses that I deemed irrelevant but I have taken anyway
 |--|--|
 |IS1103|Ethics in Computing|
 |GEA1000|Quantitative Reasoning with Data|
+|[CS2101](https://nusmods.com/courses/CS2101/effective-communication-for-computing-professionals)|Effective Communication for Computing Professionals ⭐|
 
 
 ## Note
@@ -66,19 +68,28 @@ A list of courses that I deemed irrelevant but I have taken anyway
 
 export default function AcademicsMain() {
   return (
-    <Stack spacing={8}>
-      <Container
-        maxW="container.md"
-        marginTop="10"
-        marginBottom="10"
-        bg="white"
-        boxShadow="xl"
-        borderRadius="xl"
-        padding="5"
-        align="center"
-      >
-        <TextBox text={FULL_TEXT} />
-      </Container>
-    </Stack>
+    <>
+      <Helmet>
+        <title>Academics</title>
+        <meta
+          name="description"
+          content="A list of courses I've taken so far in NUS sorted on each subsection by ascending level of complexity."
+        />
+      </Helmet>
+      <Stack spacing={8}>
+        <Container
+          maxW="container.md"
+          marginTop="10"
+          marginBottom="10"
+          bg="white"
+          boxShadow="xl"
+          borderRadius="xl"
+          padding="5"
+          align="center"
+        >
+          <TextBox text={FULL_TEXT} />
+        </Container>
+      </Stack>
+    </>
   );
 }

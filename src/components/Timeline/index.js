@@ -7,7 +7,6 @@ import {
   AccordionIcon,
   Box,
   chakra,
-  Container,
   Flex,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -44,15 +43,17 @@ const milestones = [
     id: 4,
     date: "August 2022 - November 2023",
     title: "Teaching Assistant @ National University of Singapore",
-    description: `I facilitated tutorial and lab sessions, graded assignments, and provided consultations for 8 to 15 students in CS1101S (Programming Methodology) 
+    description: `Named to NUS SoC's Honour List of Student Tutors (AY22/23).
+
+    Facilitated tutorial and lab sessions, graded assignments, and provided consultations for 8 to 15 students in CS1101S (Programming Methodology) 
     and CS2030S (Programming Methodology 2), imparting fundamental computer science concepts and functional programming principles in CS1101S, while delving into object-oriented design and advanced functional programming techniques in Java for CS2030S.
-    I am now teaching CS2100 on Computer Organization`,
+    I also taught 50 students on CS2100 (Computer Organization) as a tutor; guided students in understanding the low-level details of computer architecture, C, assembly language, and cache management.`,
   },
   {
     id: 5,
-    date: "December 2023 - Present",
+    date: `December 2023 - Present (${new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })})`,
     title: "Software Engineer Intern @ ShopBack",
-    description: `Working to develop and maintain the company's Business Development platform`,
+    description: `Develop and maintain the company's Business Process system and platform.`
   },
 ];
 
