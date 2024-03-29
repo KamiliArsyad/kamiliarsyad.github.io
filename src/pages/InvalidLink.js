@@ -13,6 +13,16 @@ export default function InvalidLink() {
       alignItems="center"
       height="100vh"
     >
+      {/* Add big 404 with emoji */}
+      <Text fontSize="6xl" textAlign="center">
+        404
+        <br />
+        Page Not Found
+
+        <span role="img" aria-label="sad">
+          😢
+        </span>
+      </Text>
       <Text fontSize="xl" textAlign="center">
         Sorry! This page either doesn't exist or is under development :(
         <br />
