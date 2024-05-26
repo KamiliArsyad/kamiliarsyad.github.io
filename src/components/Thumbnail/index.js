@@ -76,7 +76,7 @@ export default function Thumbnail({ postListObject, onClick }) {
             {categories}
           </Text>
           <Box className="cursor-pointer" onClick={onClick}>
-            <Heading color={headingColor} fontSize={"xl"} fontFamily={"body"}>
+            <Heading color={headingColor} fontSize={"xl"} fontFamily={"heading"}>
               {title}
             </Heading>
             <Text color={"gray.500"}>{summary}</Text>
