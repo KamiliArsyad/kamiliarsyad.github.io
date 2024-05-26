@@ -22,9 +22,11 @@ Algorithms, and Database Systems
 `;
 
 const LINKS = `
-- [**LinkedIn**](https://www.linkedin.com/in/arsyad-kamili/)
-- [**GitHub**](https://github.com/KamiliArsyad)
-- [**YouTube**](https://youtube.com/c/ArsyadKamili)
+[**LinkedIn**](https://www.linkedin.com/in/arsyad-kamili/)
+
+[**GitHub**](https://github.com/KamiliArsyad)
+
+[**YouTube**](https://youtube.com/c/ArsyadKamili)
 `;
 
 export default function Landing() {
