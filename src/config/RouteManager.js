@@ -12,24 +12,32 @@ import ProjectsMain from "../pages/Projects/ProjectsMain";
 import MDEditor from "../pages/Projects/MDEditor";
 import InstantCell from "../pages/Projects/InstantCell";
 import { ICTRoute } from "../features/instantCellTable/ICTRoute";
+import UserLogin from "../pages/Admin/UserLogin";
+import { AdminRoute } from "../features/admin/AdminRoute";
 
 export default function RouteManager() {
   return (
     <Routes>
       <Route path="/" element={<App />}>
-        <Route path="" element={<Landing />} />
-        <Route path="interests" element={<InterestsMain />} />
-        <Route path="projects" element={<ProjectsMain />} />
-        <Route path="projects/online-markdown-editor" element={<MDEditor />} />
-        <Route element={<ICTRoute />}>
-          <Route path="projects/instant-cell" element={<InstantCell />} />
+        <Route element={<AdminRoute />}>
+          <Route path="" element={<Landing />} />
+          <Route path="admin/login" element={<UserLogin />} />
+          <Route path="interests" element={<InterestsMain />} />
+          <Route path="projects" element={<ProjectsMain />} />
+          <Route
+            path="projects/online-markdown-editor"
+            element={<MDEditor />}
+          />
+          <Route element={<ICTRoute />}>
+            <Route path="projects/instant-cell" element={<InstantCell />} />
+          </Route>
+          <Route path="academics" element={<AcademicsMain />} />
+          <Route element={<PostRoute />}>
+            <Route path="blog" element={<BlogDashboard />} />
+            <Route path="blog/:postid" element={<BlogPost />} />
+          </Route>
+          <Route path="dev" element={<Dev />} />
         </Route>
-        <Route path="academics" element={<AcademicsMain />} />
-        <Route element={<PostRoute />}>
-          <Route path="blog" element={<BlogDashboard />} />
-          <Route path="blog/:postid" element={<BlogPost />} />
-        </Route>
-        <Route path="dev" element={<Dev />} />
       </Route>
       <Route path="*" element={<InvalidLink />} />
     </Routes>
