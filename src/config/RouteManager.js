@@ -14,6 +14,7 @@ import InstantCell from "../pages/Projects/InstantCell";
 import { ICTRoute } from "../features/instantCellTable/ICTRoute";
 import UserLogin from "../pages/Admin/UserLogin";
 import { AdminRoute } from "../features/admin/AdminRoute";
+import BlogMaker from "../pages/Blog/BlogMaker";
 
 export default function RouteManager() {
   return (
@@ -35,6 +36,7 @@ export default function RouteManager() {
           <Route element={<PostRoute />}>
             <Route path="blog" element={<BlogDashboard />} />
             <Route path="blog/:postid" element={<BlogPost />} />
+            <Route path="blog-new" element={<BlogMaker />} />
           </Route>
           <Route path="dev" element={<Dev />} />
         </Route>
