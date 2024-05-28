@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   darkest: "#0a1128",
   lightest: "#ffeddf",
 };

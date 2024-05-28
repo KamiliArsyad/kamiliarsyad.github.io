@@ -1,22 +1,13 @@
-import {
-  Box,
-  Divider,
-  Grid,
-  Heading,
-  Stack,
-  Textarea,
-} from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, Divider, Grid, Stack, Textarea } from "@chakra-ui/react";
 import Post from "../Post";
 
-export default function TextInputMD() {
-  let [text, setText] = useState(default_text);
-
-  const handleChange = (e) => setText(e.target.value);
+export default function TextInputMD({ text, handleChange, ...rest }) {
+  if (!text) {
+    text = default_text;
+  }
 
   return (
     <Stack w="100%" h="90%" spacing={2} mx="auto" px={2}>
-      <Heading fontSize="3xl">Online Markdown Editor</Heading>
       <Divider />
       <Grid
         templateColumns="1fr 1fr" // Split into two equal columns
@@ -33,15 +24,17 @@ export default function TextInputMD() {
             onChange={handleChange}
           />
         </Box>
-        <Box
-          h="100%"
-          border="1px"
-          borderColor="gray.200"
-        >
-          <Post post={{ body: text }} />
+        <Box h="100%" border="1px" borderColor="gray.200">
+          <Post
+            post={
+              rest?.post?.body
+                ? rest.post
+                : { body: text, title: rest?.post?.title }
+            }
+          />
         </Box>
       </Grid>
-    </Stack> 
+    </Stack>
   );
 }
 

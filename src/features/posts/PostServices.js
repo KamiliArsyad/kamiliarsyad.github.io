@@ -1,4 +1,5 @@
-import { getPost, getPosts } from "../../APIs/PostAPI";
+import { createPost, getPost, getPosts } from "../../APIs/PostAPI";
+import { getUserFromLocalStorage } from "../admin/AdminServices";
 
 /**
  * @description Fetches all posts from the API
@@ -51,6 +52,30 @@ export const fetchPost = async (dispatch, id) => {
 };
 
 /**
+ * @description Publishes a new post to the API
+ * @param {import("./PostModel").PostModel} post
+ * @returns {Promise} Contains the data returned from the API
+ * @throws {Error} If the API request fails
+ */
+export const publishPost = async (post) => {
+  try {
+    const user = getUserFromLocalStorage();
+    post.author = user._id;
+    const response = await createPost(post, user.token);
+    const data = await response.data;
+
+    if (response.status === 201) {
+      return data;
+    }
+
+    throw new Error(data.message);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+/**
  * @description Clears the postFocus stat
  * @param {*} dispatch
  * @returns {void}
@@ -68,4 +93,4 @@ const sortByDate = (posts) => {
   return posts.sort((a, b) => {
     return new Date(b.timestamp) - new Date(a.timestamp);
   });
-}
+};
