@@ -99,6 +99,8 @@ export default function Landing() {
           </Container>
         </Stack>
       </Stack>
+      <a href="/blog-new" style={{ display: "none" }}></a>
+      <a href="/projects/instant-cell" style={{ display: "none" }}></a>
     </>
   );
 }

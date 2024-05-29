@@ -43,8 +43,13 @@ export const userReducer = (state, action) => {
         user: {},
         isLoggedIn: false,
       };
+    case "LOAD_USER":
+      return {
+        ...state,
+        user: action.payload,
+        isLoggedIn: true,
+      };
     case "RESET_ERROR":
-      console.log("resetting error");
       return {
         ...state,
         isError: false,

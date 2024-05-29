@@ -15,7 +15,7 @@ import {
 import BeatLoader from "react-spinners/BeatLoader";
 import TextInputMD from "../../components/TextInputMD";
 import { createEmptyPost, PostType } from "../../features/posts/PostModel";
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { publishPost } from "../../features/posts/PostServices";
 import { useNavigate } from "react-router-dom";
 
@@ -29,6 +29,8 @@ const postReducer = (state, action) => {
       return { ...state, categories: action.payload };
     case "SET_IMAGEURL":
       return { ...state, imageURL: action.payload };
+    case "SET_POST":
+      return { ...state, ...action.payload };
     case "CLEAR_POST":
       return createInitialPost({});
     default:
@@ -44,6 +46,35 @@ const createInitialPost = ({ ...details }) => {
   post.body = details?.body;
 
   return post;
+};
+
+/**
+ * @description Saves the blog post in-progress to localStorage
+ * @returns {void}
+ */
+const savePost = (post) => {
+  if (!post) {
+    return;
+  }
+
+  localStorage.setItem("post", JSON.stringify(post));
+};
+
+/**
+ * @description Loads the blog post in-progress from localStorage
+ */
+const loadPost = (dispatch) => {
+  const post = localStorage.getItem("post");
+
+  if (!post) {
+    return;
+  }
+
+  try {
+    dispatch({ type: "SET_POST", payload: JSON.parse(post) });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export default function BlogMaker() {
@@ -72,9 +103,16 @@ export default function BlogMaker() {
           description: error.response?.data.message || error.message,
         };
       },
-    }
-  );
+    });
   };
+
+  useEffect(() => {
+    loadPost(dispatch);
+  }, []);
+
+  useEffect(() => {
+    savePost(post);
+  }, [post]);
 
   return (
     <Flex

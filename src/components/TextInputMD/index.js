@@ -2,10 +2,7 @@ import { Box, Divider, Grid, Stack, Textarea } from "@chakra-ui/react";
 import Post from "../Post";
 
 export default function TextInputMD({ text, handleChange, ...rest }) {
-  if (!text) {
-    text = default_text;
-  }
-
+  text = text ? text : rest?.post?.body ? rest.post.body : "";
   return (
     <Stack w="100%" h="90%" spacing={2} mx="auto" px={2}>
       <Divider />
@@ -18,7 +15,8 @@ export default function TextInputMD({ text, handleChange, ...rest }) {
       >
         <Box bg="gray.100">
           <Textarea
-            placeholder={text}
+            placeholder={default_text}
+            value={text}
             resize="none"
             h="100%" // Set height to 100% to fill the grid cell
             onChange={handleChange}
