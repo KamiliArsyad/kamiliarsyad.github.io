@@ -18,7 +18,6 @@ import {
 import {
   loginUser,
   logoutUser,
-  getUserFromLocalStorage,
   resetUserError,
 } from "../../features/admin/AdminServices";
 
@@ -167,11 +166,6 @@ function LoginForm() {
 
 export default function UserLogin() {
   const { userState } = useAdminContext();
-  try {
-    userState.user = getUserFromLocalStorage();
-  } catch (error) {
-    userState.user = {};
-  }
 
   return (
     <Flex height="100vh" align="center" justify="center" p={4}>

@@ -1,5 +1,7 @@
 import { login } from "../../APIs/UserAPI";
 
+const USER_NOT_LOGGED_IN = "User not logged in";
+
 /**
  * @description Logs a user in
  * @param {*} dispatch - the dispatch function.
@@ -47,7 +49,25 @@ export const getUserFromLocalStorage = () => {
     return JSON.parse(user);
   }
 
-  throw new Error("User not found in localStorage");
+  throw new Error(USER_NOT_LOGGED_IN);
+};
+
+/**
+ * @description Loads the user from localStorage
+ * @param {*} dispatch - the dispatch function.
+ */
+export const loadUser = (dispatch) => {
+  try {
+    const user = getUserFromLocalStorage();
+    dispatch({ type: "LOAD_USER", payload: user });
+  } catch (error) {
+    if (error.message === USER_NOT_LOGGED_IN) {
+      dispatch({ type: "LOGOUT" });
+      return;
+    }
+
+    throw error;
+  }
 };
 
 /**
