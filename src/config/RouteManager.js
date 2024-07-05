@@ -15,6 +15,7 @@ import { ICTRoute } from "../features/instantCellTable/ICTRoute";
 import UserLogin from "../pages/Admin/UserLogin";
 import { AdminRoute } from "../features/admin/AdminRoute";
 import BlogMaker from "../pages/Blog/BlogMaker";
+import PastProjects from "../pages/Projects/PastProjects";
 
 export default function RouteManager() {
   return (
@@ -24,6 +25,7 @@ export default function RouteManager() {
           <Route path="" element={<Landing />} />
           <Route path="admin/login" element={<UserLogin />} />
           <Route path="interests" element={<InterestsMain />} />
+          <Route path="past-works" element={<PastProjects />} />
           <Route path="projects" element={<ProjectsMain />} />
           <Route
             path="projects/online-markdown-editor"

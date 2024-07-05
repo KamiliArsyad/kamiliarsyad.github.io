@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+      xmlns="http://https://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://https://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://https://www.sitemaps.org/schemas/sitemap/0.9
+            http://https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
   <loc>https://www.kamiliarsyad.com/</loc>
@@ -41,5 +41,20 @@
   <loc>https://www.kamiliarsyad.com/projects/online-markdown-editor/</loc>
   <lastmod>2023-09-09T14:24:05+00:00</lastmod>
 </url>
-
+<url>
+  <loc>https://www.kamiliarsyad.com/blog/optimisation-algorithms-cs4234-review</loc>
+  <lastmod>2023-12-07T14:24:05+00:00</lastmod>
+</url>
+<url>
+  <loc>https://www.kamiliarsyad.com/blog/parallel-computing-cs3210-review</loc>
+  <lastmod>2024-05-19T14:24:05+00:00</lastmod>
+</url>
+<url>
+  <loc>https://www.kamiliarsyad.com/blog/my-shopback-adventure</loc>
+  <lastmod>2024-05-29T14:24:05+00:00</lastmod>
+</url>
+<url>
+  <loc>https://www.kamiliarsyad.com/blog/testing-db-normalization-theory-vs-practice---fdsamplerush</loc>
+  <lastmod>2024-06-08T14:24:05+00:00</lastmod>
+</url>
 </urlset>
