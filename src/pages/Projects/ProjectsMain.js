@@ -48,30 +48,25 @@ const projects = [
     ],
   },
   {
-    title: "CV ORB-ZMQ Stream",
+    title: "Archblog Backend",
     description:
-      "Simple CUDA-enabled high performance one-to-one network stream for extracting and streaming ORB features from an edge device to a server",
-    url: "https://github.com/KamiliArsyad/cvORB-zmq-stream",
-    tags: [
-      "C++",
-      "CUDA",
-      "ZeroMQ",
-      "Computer Vision",
-      "Parallel Computing",
-      "High-troughput Software Development",
-    ],
-  },
-  {
-    title: "DigitalIT",
-    description:
-      "Empowering small business owners to digitalize their businesses",
-    url: "https://github.com/florentianayuwono/DigitalIT",
-    tags: ["React", "Node.js", "Express", "PosgtreSQL", "Web Development"],
+      "Backend for my personal blog, Archblog, built with Express and MongoDB Atlas to serve RESTful API. The project is made to horizontally scale (for my blog's features) and to be easily maintainable.",
+    url: "https://github.com/KamiliArsyad/_archblog-backend",
+    tags: ["Node.js", "Express", "MongoDB", "RESTful API", "Web Development"],
   },
 ];
 
-const ProjectCard = ({ title, description, url, tags }) => {
+export const ProjectCard = ({ title, description, url, tags, date }) => {
   const isExternal = url.startsWith("http");
+  const formattedDate = date
+    ? new Date(date.split("-").reverse().join("-")).toLocaleDateString(
+        "en-US",
+        {
+          month: "long",
+          year: "numeric",
+        }
+      )
+    : null;
 
   return (
     <Card
@@ -86,6 +81,14 @@ const ProjectCard = ({ title, description, url, tags }) => {
       </CardHeader>
       <CardBody>
         <Stack>
+          {formattedDate && (
+            <>
+              <Text fontSize="sm" color="gray.500">
+                {formattedDate}
+              </Text>
+              <Divider />
+            </>
+          )}
           <Text>{description}</Text>
           <Divider />
           <Wrap>
@@ -116,10 +119,7 @@ export default function ProjectsMain() {
     <>
       <Helmet>
         <title>Projects</title>
-        <meta
-          name="description"
-          content="A list of projects I'm working on"
-        />
+        <meta name="description" content="A list of projects I'm working on" />
       </Helmet>
       <Container maxW="container.lg" py={12}>
         <Wrap justify="center" spacing={4}>

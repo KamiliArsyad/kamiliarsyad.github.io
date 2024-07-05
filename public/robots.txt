@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-Sitemap: http://kamiliarsyad/com/sitemap.xml
+Sitemap: https://kamiliarsyad/com/sitemap.xml

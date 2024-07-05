@@ -9,7 +9,6 @@ const FULL_TEXT = `
 ## Current Courses
 |Course Code|Title|
 |--|--|
-|[CS4221](https://nusmods.com/courses/CS4221/database-applications-design-and-tuning)|**Database Applications Design and Tuning**|
 
 ## Computer Science and its Math Courses
 |Course Code|Topic|
@@ -27,6 +26,7 @@ const FULL_TEXT = `
 |[CS3210](https://nusmods.com/courses/CS3210/parallel-computing)|**Parallel Computing** ⭐|
 |[CS3230](https://nusmods.com/courses/CS3230/design-and-analysis-of-algorithms)|**Design and Analysis of Algorithm** ⭐|
 |[CS3223](https://nusmods.com/courses/CS3223/database-systems-implementation)|**Database Systems Implementation**⭐|
+|[CS4221](https://nusmods.com/courses/CS4221/database-applications-design-and-tuning)|**Database Applications Design and Tuning**⭐⭐|
 |[CS4225](https://nusmods.com/courses/CS4225/big-data-systems-for-data-science)|**Big Data Systems for Data Science**⭐|
 |[CS4234](https://nusmods.com/courses/CS4234/optimisation-algorithms)|**Optimisation Algorithms**|
 
@@ -45,7 +45,7 @@ const FULL_TEXT = `
 |GESS1014|Islam and Contemporary Malay Society ⭐|
 |[RE1701](https://nusmods.com/courses/RE1701/urban-land-use-and-development)|Urban Land Use and Development|
 |[GE3204](https://nusmods.com/courses/GE3204/cities-and-regions-planning-for-change)|**Cities and Regions: Planning for Change**⭐⭐|
-|[GE3236](https://nusmods.com/courses/GE3236/transport-and-communications)|Transport and Communications ⭐⭐|
+|[GE3236](https://nusmods.com/courses/GE3236/transport-and-communications)|**Transport and Communications** ⭐⭐|
 |||
 
 ## non-relevant
