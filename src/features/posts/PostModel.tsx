@@ -3,6 +3,8 @@ export enum PostType {
   COURSE_REVIEW = "Course Review",
   PROJECT = "Project",
   ACADEMICS = "Academics",
+  PAPER = "Paper",
+  RESEARCH = "Research",
 }
 
 export default interface PostModel {
