@@ -1,6 +1,7 @@
 import {
   Box,
   Center,
+  chakra,
   Heading,
   Text,
   Stack,
@@ -24,8 +25,16 @@ export default function Thumbnail({ postListObject, onClick }) {
   );
 
   try {
-    var { title, author, summary, categories, timestamp, imageURL, wordCount, viewCount } =
-      postListObject;
+    var {
+      title,
+      author,
+      summary,
+      categories,
+      timestamp,
+      imageURL,
+      wordCount,
+      viewCount,
+    } = postListObject;
   } catch (error) {
     console.error(error);
     return null;
@@ -36,6 +45,8 @@ export default function Thumbnail({ postListObject, onClick }) {
   const date = new Date(timestamp).toLocaleDateString();
   const minutesToRead = Math.floor(wordCount / 200);
   const views = viewCount;
+  const tags = Array.isArray(categories) ? categories : [categories];
+  const mainCategory = tags[0];
 
   return (
     <Center py={6}>
@@ -73,14 +84,41 @@ export default function Thumbnail({ postListObject, onClick }) {
             fontSize={"small"}
             letterSpacing={1.1}
           >
-            {categories}
+            {mainCategory}
           </Text>
           <Box className="cursor-pointer" onClick={onClick}>
-            <Heading color={headingColor} fontSize={"xl"} fontFamily={"heading"}>
+            <Heading
+              color={headingColor}
+              fontSize={"xl"}
+              fontFamily={"heading"}
+            >
               {title}
             </Heading>
             <Text color={"gray.500"}>{summary}</Text>
           </Box>
+          {/* Refactor later */}
+          {tags.length > 1 && (
+            <Stack direction="row" spacing={3} mt={4}>
+              {tags.map((tag, index) => (
+                <chakra.span
+                  key={index}
+                  fontSize="xx-small"
+                  fontWeight="bold"
+                  textTransform="uppercase"
+                  color="gray.600"
+                  _dark={{
+                    color: "gray.400",
+                  }}
+                  px={2}
+                  py={1}
+                  bg="gray.200"
+                  rounded="lg"
+                >
+                  {tag}
+                </chakra.span>
+              ))}
+            </Stack>
+          )}
         </Stack>
         <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
           <Avatar src={avatar} alt={"Author"} />
@@ -90,7 +128,7 @@ export default function Thumbnail({ postListObject, onClick }) {
             </Text>
             <Text color={"gray.500"}>
               {" "}
-              {date} · {minutesToRead} min read{" "} · {views} views
+              {date} · {minutesToRead} min read · {views} views
             </Text>
           </Stack>
         </Stack>

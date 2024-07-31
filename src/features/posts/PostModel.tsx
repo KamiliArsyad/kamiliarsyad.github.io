@@ -9,7 +9,7 @@ export default interface PostModel {
   title: string;
   body: string;
   author: string; // to be renamed to authorId - await contract system
-  categories: string; // to be replaced with an array of strings - await backend
+  categories: [string] | string;
   imageURL: string;
 }
 
