@@ -3,13 +3,15 @@ export enum PostType {
   COURSE_REVIEW = "Course Review",
   PROJECT = "Project",
   ACADEMICS = "Academics",
+  PAPER = "Paper",
+  RESEARCH = "Research",
 }
 
 export default interface PostModel {
   title: string;
   body: string;
   author: string; // to be renamed to authorId - await contract system
-  categories: string; // to be replaced with an array of strings - await backend
+  categories: [string] | string;
   imageURL: string;
 }
 
