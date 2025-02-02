@@ -1,0 +1,20 @@
+diff --git a/node_modules/chakra-ui-markdown-renderer/dist/index.cjs.js b/node_modules/chakra-ui-markdown-renderer/dist/index.cjs.js
+index 1844afe..099f460 100644
+--- a/node_modules/chakra-ui-markdown-renderer/dist/index.cjs.js
++++ b/node_modules/chakra-ui-markdown-renderer/dist/index.cjs.js
+@@ -1,4 +1,4 @@
+-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("react/jsx-runtime"),r=require("deepmerge"),i=require("@chakra-ui/layout"),n=require("@chakra-ui/image"),t=require("@chakra-ui/checkbox"),d=require("@chakra-ui/table"),c=require("@chakra-ui/system");function l(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var a=l(r),o=function(){return(o=Object.assign||function(e){for(var r,i=1,n=arguments.length;i<n;i++)for(var t in r=arguments[i])Object.prototype.hasOwnProperty.call(r,t)&&(e[t]=r[t]);return e}).apply(this,arguments)};
++"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("react/jsx-runtime"),r=require("deepmerge"),i=require("@chakra-ui/react"),n=require("@chakra-ui/react"),t=require("@chakra-ui/react"),d=require("@chakra-ui/react"),c=require("@chakra-ui/system");function l(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var a=l(r),o=function(){return(o=Object.assign||function(e){for(var r,i=1,n=arguments.length;i<n;i++)for(var t in r=arguments[i])Object.prototype.hasOwnProperty.call(r,t)&&(e[t]=r[t]);return e}).apply(this,arguments)};
+ /*! *****************************************************************************
+ Copyright (c) Microsoft Corporation.
+ 
+diff --git a/node_modules/chakra-ui-markdown-renderer/dist/index.esm.js b/node_modules/chakra-ui-markdown-renderer/dist/index.esm.js
+index 9c81d1d..b30919f 100644
+--- a/node_modules/chakra-ui-markdown-renderer/dist/index.esm.js
++++ b/node_modules/chakra-ui-markdown-renderer/dist/index.esm.js
+@@ -1,4 +1,4 @@
+-import{jsx as e}from"react/jsx-runtime";import r from"deepmerge";import{Text as i,Code as n,Divider as t,Link as c,ListItem as d,Heading as l,UnorderedList as o,OrderedList as a}from"@chakra-ui/layout";import{Image as h}from"@chakra-ui/image";import{Checkbox as u}from"@chakra-ui/checkbox";import{Table as s,Thead as p,Tbody as v,Tr as m,Td as f,Th as b}from"@chakra-ui/table";import{chakra as g}from"@chakra-ui/system";
++import{jsx as e}from"react/jsx-runtime";import r from"deepmerge";import{Text as i,Code as n,Divider as t,Link as c,ListItem as d,Heading as l,UnorderedList as o,OrderedList as a}from"@chakra-ui/react";import{Image as h}from"@chakra-ui/react";import{Checkbox as u}from"@chakra-ui/react";import{Table as s,Thead as p,Tbody as v,Tr as m,Td as f,Th as b}from"@chakra-ui/react";import{chakra as g}from"@chakra-ui/system";
+ /*! *****************************************************************************
+ Copyright (c) Microsoft Corporation.
+ 
