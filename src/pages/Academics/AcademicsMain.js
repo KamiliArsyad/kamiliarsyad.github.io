@@ -7,8 +7,12 @@ const FULL_TEXT = `
 *Here is a list of courses I've taken so far in NUS sorted on each subsection by ascending level of complexity. Do read the note at the bottom first!*
 
 ## Current Courses
-|Course Code|Title|
+|Course Code|Topic|
 |--|--|
+|ES2066|Communicating in the Information Age|
+|[ENV3104](https://nusmods.com/courses/ENV3104/socio-ecological-assessment-of-environmental-impacts)|**Socio-Ecological Assessment of Environmental Impacts**|
+|[CS3211](https://nusmods.com/courses/CS3211/parallel-and-concurrent-programming)|**Parallel and Concurrent Programming**|
+|[CS4231](https://nusmods.com/courses/CS4231/parallel-and-distributed-algorithms)|**Parallel and Distributed Algorithms**|
 
 ## Computer Science and its Math Courses
 |Course Code|Topic|
@@ -24,14 +28,17 @@ const FULL_TEXT = `
 |[CS2109S](https://nusmods.com/courses/CS2109S/introduction-to-ai-and-machine-learning)|**AI and Machine Learning**|
 |[CS2106](https://nusmods.com/courses/CS2106/introduction-to-operating-systems)|Operating Systems|
 |[CS3210](https://nusmods.com/courses/CS3210/parallel-computing)|**Parallel Computing** ⭐|
+|[CS3103](https://nusmods.com/courses/CS3103/computer-networks-practice)|**Computer Networks Practice**⭐⭐|
 |[CS3230](https://nusmods.com/courses/CS3230/design-and-analysis-of-algorithms)|**Design and Analysis of Algorithm** ⭐|
 |[CS3223](https://nusmods.com/courses/CS3223/database-systems-implementation)|**Database Systems Implementation**⭐|
+|[CS4211](https://nusmods.com/courses/CS4211/formal-methods-for-software-engineering)|**Formal Methods for Software Engineering**|
 |[CS4221](https://nusmods.com/courses/CS4221/database-applications-design-and-tuning)|**Database Applications Design and Tuning**⭐⭐|
+|[CS4224](https://nusmods.com/courses/CS4224/distributed-databases)|**Distributed Databases**⭐|
 |[CS4225](https://nusmods.com/courses/CS4225/big-data-systems-for-data-science)|**Big Data Systems for Data Science**⭐|
 |[CS4234](https://nusmods.com/courses/CS4234/optimisation-algorithms)|**Optimisation Algorithms**|
 
 ## Math, Applied Math, and other STEM Courses
-|Course Code|Title|
+|Course Code|Topic|
 |--|--|
 |MA1521|Calculus for Computing|
 |[QF1100](https://nusmods.com/courses/QF1100/introduction-to-quantitative-finance)|**Introduction to Quantitative Finance** ⭐|
@@ -39,18 +46,20 @@ const FULL_TEXT = `
 |MA2001|Linear Algebra I|
 |ST2334|Probability and Statistics|
 ## Social Science
-|Course Code|Title|
+|Course Code|Topic|
 |--|--|
 |GEC1030|**Metropolis: The City in World's History**⭐⭐|
 |GESS1014|Islam and Contemporary Malay Society ⭐|
+|[GEN2004](https://nusmods.com/courses/GEN2004/green-communities-in-action-climate-species-crisis)|Green Communities in Action: Climate, Species, Crisis⭐⭐|
 |[RE1701](https://nusmods.com/courses/RE1701/urban-land-use-and-development)|Urban Land Use and Development|
+|[RE1706](https://nusmods.com/courses/RE1706/design-and-construction)|Design and Construction|
 |[GE3204](https://nusmods.com/courses/GE3204/cities-and-regions-planning-for-change)|**Cities and Regions: Planning for Change**⭐⭐|
 |[GE3236](https://nusmods.com/courses/GE3236/transport-and-communications)|**Transport and Communications** ⭐⭐|
 |||
 
 ## non-relevant
 A list of courses that I deemed irrelevant but I have taken anyway
-|Course Code| Title |
+|Course Code| Topic |
 |--|--|
 |IS1103|Ethics in Computing|
 |GEA1000|Quantitative Reasoning with Data|

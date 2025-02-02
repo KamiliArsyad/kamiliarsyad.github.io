@@ -15,10 +15,10 @@ import { Helmet } from "react-helmet";
 
 // Markdown
 const LANDING_TEXT = `
-Undergraduate student at the National University of Singapore
-- Majoring in Computer Science; specializing in Parallel Computing,
-Algorithms, and Database Systems
-- Minoring in Quantitative Finance and Urban Studies
+I have extensive experience in both centralized and distributed database design, 
+have optimized and hacked through RDBMS source codes (SQLite, PostgreSQL, MySQL) for personal uses and my research,
+and is currently doing a research in [NUS' FOCS Lab](https://focs-lab.comp.nus.edu.sg) under Prof. Umang Mathur to create
+novel methods for automated testing of concurrent database transaction execution.
 `;
 
 const LINKS = `
@@ -56,15 +56,15 @@ export default function Landing() {
                 University of Singapore
               </HeadComponent>
               <HeadComponent>
-                - Specializing in Database Systems, Parallel Computing,
-                Algorithms
+                - Specializing in Database Systems (mostly), Parallel Computing, Distributed Systems, and Algorithms.
               </HeadComponent>
               <HeadComponent>
                 - Minoring in Quantitative Finance and in Urban Studies
               </HeadComponent>
+              <TextBox text={LANDING_TEXT} color="white" />
             </Stack>
           }
-          image="https://avatars.githubusercontent.com/u/22293969?v=4"
+          image="https://raw.githubusercontent.com/KamiliArsyad/posts/main/Profile%20Pic.jpg"
           isDesktop={isDesktop}
           redirect={{
             relativepath: "https://github.com/kamiliarsyad",

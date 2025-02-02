@@ -44,14 +44,23 @@ const blockQuoteComponent = ({ children }) => (
  * @param {*} param0
  * @returns
  */
-export default function TextBox({ text }) {
+export default function TextBox({ text, color = "inherit" }) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm, remarkMath]}
       rehypePlugins={[rehypeKatex]}
       components={ChakraUIRenderer({
-        code: codeComponent(coldarkDark),
-        blockquote: blockQuoteComponent,
+        p: (props) => (
+          <p style={{ color: color }} {...props}>
+            {props.children}
+          </p>
+        ),
+        span: (props) => (
+          <span style={{ color: color }} {...props}>
+            {props.children}
+          </span>
+        ),
+        a: (props) => <a style={{ color: "blue" }} {...props} />,
       })}
       children={text}
     />
