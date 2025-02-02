@@ -11,6 +11,17 @@ import {
 } from "@chakra-ui/react";
 
 export default function Thumbnail({ postListObject, onClick }) {
+  const {
+    title,
+    author,
+    summary,
+    categories,
+    timestamp,
+    imageURL,
+    wordCount,
+    viewCount,
+  } = postListObject;
+
   const { bgBox, bgBoxHover, headingColor } = useColorModeValue(
     {
       bgBox: "white",
@@ -24,40 +35,22 @@ export default function Thumbnail({ postListObject, onClick }) {
     }
   );
 
-  try {
-    var {
-      title,
-      author,
-      summary,
-      categories,
-      timestamp,
-      imageURL,
-      wordCount,
-      viewCount,
-    } = postListObject;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-
   const { name, picture_url: avatar } = author;
-
   const date = new Date(timestamp).toLocaleDateString();
   const minutesToRead = Math.floor(wordCount / 200);
-  const views = viewCount;
   const tags = Array.isArray(categories) ? categories : [categories];
   const mainCategory = tags[0];
 
   return (
     <Center py={6}>
       <Box
-        maxW={"350px"}
-        w={"full"}
+        maxW="380px"
+        w="full"
         bg={bgBox}
         boxShadow="lg"
-        rounded={"md"}
+        rounded="md"
         p={6}
-        overflow={"hidden"}
+        overflow="hidden"
         transition="all 0.2s ease-in-out"
         _hover={{
           bg: bgBoxHover,
@@ -66,49 +59,48 @@ export default function Thumbnail({ postListObject, onClick }) {
         }}
       >
         <Box
-          h={"210px"}
-          bg={"gray.100"}
+          h="210px"
+          bg="gray.100"
           mt={-6}
           mx={-6}
           mb={6}
-          pos={"relative"}
+          pos="relative"
           overflow="hidden"
         >
-          <Image src={imageURL} />
+          <Image
+            src={imageURL}
+            alt={title}
+            objectFit="cover"
+            w="100%"
+            h="100%"
+          />
         </Box>
         <Stack>
           <Text
-            color={"green.500"}
-            textTransform={"uppercase"}
-            fontWeight={800}
-            fontSize={"small"}
-            letterSpacing={1.1}
+            color="green.500"
+            textTransform="uppercase"
+            fontWeight="800"
+            fontSize="sm"
+            letterSpacing="1.1px"
           >
             {mainCategory}
           </Text>
-          <Box className="cursor-pointer" onClick={onClick}>
-            <Heading
-              color={headingColor}
-              fontSize={"xl"}
-              fontFamily={"heading"}
-            >
+          <Box cursor="pointer" onClick={onClick}>
+            <Heading color={headingColor} fontSize="xl" fontFamily="heading">
               {title}
             </Heading>
-            <Text color={"gray.500"}>{summary}</Text>
+            <Text color="gray.500">{summary}</Text>
           </Box>
-          {/* Refactor later */}
           {tags.length > 1 && (
             <Stack direction="row" spacing={3} mt={4}>
               {tags.map((tag, index) => (
                 <chakra.span
                   key={index}
-                  fontSize="xx-small"
+                  fontSize="xs"
                   fontWeight="bold"
                   textTransform="uppercase"
                   color="gray.600"
-                  _dark={{
-                    color: "gray.400",
-                  }}
+                  _dark={{ color: "gray.400" }}
                   px={2}
                   py={1}
                   bg="gray.200"
@@ -120,15 +112,14 @@ export default function Thumbnail({ postListObject, onClick }) {
             </Stack>
           )}
         </Stack>
-        <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
-          <Avatar src={avatar} alt={"Author"} />
-          <Stack direction={"column"} spacing={0} fontSize={"sm"}>
-            <Text color={"gray.900"} fontWeight={600}>
+        <Stack mt={6} direction="row" spacing={4} align="center">
+          <Avatar src={avatar} alt={name} />
+          <Stack direction="column" spacing={0} fontSize="sm">
+            <Text color="gray.900" fontWeight="600">
               {name}
             </Text>
-            <Text color={"gray.500"}>
-              {" "}
-              {date} · {minutesToRead} min read · {views} views
+            <Text color="gray.500">
+              {date} · {minutesToRead} min read · {viewCount} views
             </Text>
           </Stack>
         </Stack>

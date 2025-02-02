@@ -51,7 +51,7 @@ const milestones = [
   },
   {
     id: 5,
-    date: `December 2023 - Present (${new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })})`,
+    date: `December 2023 - May 2024`,
     title: "Software Engineer Intern @ ShopBack",
     description: `Develop and maintain the company's Business Process system and platform.`
   },

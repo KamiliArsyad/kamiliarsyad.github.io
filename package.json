@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.11",
+    "@chakra-ui/layout": "^2.3.1",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -41,7 +42,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild": "react-snap"
+    "postbuild": "react-snap",
+    "postinstall": "patch-package"
   },
   "eslintConfig": {
     "extends": [
@@ -63,6 +65,7 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
+    "patch-package": "^8.0.0",
     "tailwindcss": "^3.3.2"
   },
   "reactSnap": {

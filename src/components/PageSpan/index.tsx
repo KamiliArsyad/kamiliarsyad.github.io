@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import {
   Box,
   Button,
@@ -9,64 +9,25 @@ import {
   Link,
   LinkBox,
   Stack,
+  Fade,
+  Skeleton,
   useBreakpointValue,
 } from "@chakra-ui/react";
 
-/**
- * PageSpan Props Interface.
- * @interface PageSpanProps
- * @public
- */
 interface PageSpanProps {
-  /**
-   * PageSpan heading.
-   */
   heading: string;
-
-  /**
-   * PageSpan brief.
-   */
   brief: string;
-
-  /**
-   * PageSpan image.
-   */
   image: string;
-
-  /**
-   * PageSpan background color.
-   */
   backgroundColor: string;
-
-  /**
-   * PageSpan onClick function.
-   * @returns {void}
-   */
   onClick?: () => void;
-
-  /**
-   * The mode of the PageSpan.
-   */
   isDesktop?: boolean;
-
-  /**
-   * The relative path to redirect to when clicking the button.
-   */
   redirect?: { relativepath: string; title: string };
-
-  /**
-   * The popup content.
-   */
   popupContent?: { title: string; content: ReactElement };
 }
 
-/**
- * PageSpan Component.
- * @param {PageSpanProps} props - props.
- * @returns {ReactElement} PageSpan Component.
- */
 function PageSpan(props: PageSpanProps): ReactElement<PageSpanProps> {
   const height = useBreakpointValue({ base: "lg", md: "2xl" });
+  const [isImageLoaded, setImageLoaded] = useState(false);
 
   return (
     <Flex
@@ -77,67 +38,65 @@ function PageSpan(props: PageSpanProps): ReactElement<PageSpanProps> {
       backgroundColor={props.backgroundColor}
       onClick={props.onClick}
     >
-      <Container margin="5" maxW="container.xl" marginBlock="5">
-        <Stack
-          direction={props.isDesktop ? "row" : "column"}
-          spacing={props.isDesktop ? "5" : "10"}
-        >
+      <Fade in transition={{ enter: { duration: 0.6 } }}>
+        <Container maxW="container.xl" px={5} py={5}>
           <Stack
-            spacing={props.isDesktop ? "10" : "5"}
-            minWidth={props.isDesktop ? "70%" : "100%"}
-            maxWidth={props.isDesktop ? "70%" : "100%"}
+            direction={props.isDesktop ? "row" : "column"}
+            spacing={props.isDesktop ? "5" : "10"}
           >
-            <Heading
-              size={props.isDesktop ? "2xl" : "xl"}
-              color="white"
-              transition="0.2s ease-in-out"
-              _hover={{ color: "yellow", transform: "scale(1.02)" }}
-            >
-              {props.heading}
-            </Heading>
-            {props.brief}
-            <Stack
-              direction="row"
-              justifyContent={props.isDesktop ? "none" : "center"}
-              spacing="5"
-            >
-              {props.redirect && (
-                <Button
-                  colorScheme="yellow"
-                  borderRadius="xl"
-                  transition="0.3s ease-in-out"
-                  _hover={{ backgroundColor: "white", color: "black" }}
-                  // Redirect to the path specified in the props.
-                >
-                  <LinkBox as={Link} href={props.redirect.relativepath}>
-                    {props.redirect.title}
-                  </LinkBox>
-                </Button>
-              )}
-              {props.popupContent && (
-                <Button
-                  colorScheme="cyan"
-                  borderRadius="xl"
-                  transition="0.3s ease-in-out"
-                  _hover={{ backgroundColor: "white", color: "black" }}
-                >
-                  {props.popupContent.title}
-                </Button>
-              )}
+            <Stack spacing={props.isDesktop ? "10" : "5"} flex={props.isDesktop ? 7 : 1}>
+              <Heading
+                size={props.isDesktop ? "2xl" : "xl"}
+                color="white"
+                transition="0.2s ease-in-out"
+                _hover={{ color: "yellow", transform: "scale(1.02)" }}
+              >
+                {props.heading}
+              </Heading>
+              {props.brief}
+              <Stack
+                direction="row"
+                justifyContent={props.isDesktop ? "flex-start" : "center"}
+                spacing="5"
+              >
+                {props.redirect && (
+                  <Button
+                    colorScheme="yellow"
+                    borderRadius="xl"
+                    transition="0.3s ease-in-out"
+                    _hover={{ backgroundColor: "white", color: "black" }}
+                  >
+                    <LinkBox as={Link} href={props.redirect.relativepath}>
+                      {props.redirect.title}
+                    </LinkBox>
+                  </Button>
+                )}
+                {props.popupContent && (
+                  <Button
+                    colorScheme="cyan"
+                    borderRadius="xl"
+                    transition="0.3s ease-in-out"
+                    _hover={{ backgroundColor: "white", color: "black" }}
+                  >
+                    {props.popupContent.title}
+                  </Button>
+                )}
+              </Stack>
             </Stack>
+            <Box flex={props.isDesktop ? 3 : 1}>
+              <Skeleton isLoaded={isImageLoaded} fadeDuration={0.6}>
+                <Image
+                  transition="0.3s ease-in-out"
+                  _hover={{ transform: "scale(1.05)" }}
+                  borderRadius="full"
+                  src={props.image}
+                  onLoad={() => setImageLoaded(true)}
+                />
+              </Skeleton>
+            </Box>
           </Stack>
-          <Box maxW={props.isDesktop ? "30%" : "100%"}>
-            <Image
-              transition="0.3s ease-in-out"
-              _hover={{
-                transform: "scale(1.05)",
-              }}
-              borderRadius="full"
-              src={props.image}
-            />
-          </Box>
-        </Stack>
-      </Container>
+        </Container>
+      </Fade>
     </Flex>
   );
 }
