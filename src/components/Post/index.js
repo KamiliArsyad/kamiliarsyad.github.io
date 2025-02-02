@@ -9,19 +9,18 @@ import {
   Tbody,
   Td,
   Tr,
+  Fade,
 } from "@chakra-ui/react";
 import TextBox from "../TextBox";
 
-const isCourseReview = (post) => {
-  return post.courseReview;
-};
+const isCourseReview = (post) => post.courseReview;
 
-const CourseReviewStats = ({ post }) => {
-  return (
+const CourseReviewStats = ({ post }) => (
+  <Fade in transition={{ enter: { duration: 0.4 } }}>
     <TableContainer>
       <Table>
         <TableCaption>
-          {post.courseReview.course_title} - {post.courseReview.courseid}{" "}
+          {post.courseReview.course_title} - {post.courseReview.courseid}
         </TableCaption>
         <Tbody>
           <Tr>
@@ -45,29 +44,33 @@ const CourseReviewStats = ({ post }) => {
         </Tbody>
       </Table>
     </TableContainer>
-  );
-};
+  </Fade>
+);
 
 export default function Post({ post }) {
   return (
-    <Container
-      maxW={{ base: "container.sm", md: "container.md", lg: "container.md" }}
-      py={6}
-      bg="white"
-      boxShadow="xl"
-      borderRadius="xl"
-    >
-      <Stack margin="5">
-        {isCourseReview(post) && (
-          <>
-            <CourseReviewStats post={post} />
-            <Divider />{" "}
-          </>
-        )}
-        <Heading>{post.title}</Heading>
-        <Divider />
-        <TextBox text={post.body} />
-      </Stack>
-    </Container>
+      <Container
+        maxW={{ base: "container.sm", md: "container.md", lg: "container.md" }}
+        py={6}
+        bg="white"
+        boxShadow="xl"
+        borderRadius="xl"
+      >
+        <Stack m={5} spacing={4}>
+          {isCourseReview(post) && (
+            <>
+              <CourseReviewStats post={post} />
+              <Divider />
+            </>
+          )}
+          <Fade in transition={{ enter: { duration: 0.5, delay: 0.1 } }}>
+            <Heading>{post.title}</Heading>
+          </Fade>
+          <Divider />
+          <Fade in transition={{ enter: { duration: 0.5, delay: 0.2 } }}>
+            <TextBox text={post.body} />
+          </Fade>
+        </Stack>
+      </Container>
   );
 }

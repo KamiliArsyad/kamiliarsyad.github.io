@@ -1,6 +1,8 @@
 import TextBox from "../../components/TextBox";
 import { Container, Stack } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
+import BlogPost from "../Blog/BlogPost";
+import Post from "../../components/Post";
 
 const FULL_TEXT = `
 # Courses Taken
@@ -86,18 +88,7 @@ export default function AcademicsMain() {
         />
       </Helmet>
       <Stack spacing={8}>
-        <Container
-          maxW="container.md"
-          marginTop="10"
-          marginBottom="10"
-          bg="white"
-          boxShadow="xl"
-          borderRadius="xl"
-          padding="5"
-          align="center"
-        >
-          <TextBox text={FULL_TEXT} />
-        </Container>
+        <Post post={{body: FULL_TEXT}} />
       </Stack>
     </>
   );
