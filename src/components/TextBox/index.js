@@ -51,7 +51,7 @@ export default function TextBox({ text, color = "inherit" }) {
       rehypePlugins={[rehypeKatex]}
       components={ChakraUIRenderer({
         p: (props) => (
-          <p style={{ color: color }} {...props}>
+          <p style={{ color: color, marginBottom: '1rem' }} {...props}>
             {props.children}
           </p>
         ),
@@ -61,6 +61,8 @@ export default function TextBox({ text, color = "inherit" }) {
           </span>
         ),
         a: (props) => <a style={{ color: "blue" }} {...props} />,
+        code: codeComponent(coldarkDark),
+        blockquote: blockQuoteComponent,
       })}
       children={text}
     />
