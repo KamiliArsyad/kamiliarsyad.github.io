@@ -14,7 +14,9 @@ const LANDING_TEXT = `
 I have extensive experience in both centralized and distributed database design/implementation, 
 have optimized and hacked through RDBMS source codes (SQLite, PostgreSQL, MySQL) for personal uses and my research,
 and am currently doing a research in [NUS' FOCS Lab](https://focs-lab.comp.nus.edu.sg) under Prof. Umang Mathur to create
-novel methods for automated testing of concurrent database transaction execution.
+novel methods for automated testing of concurrent database transaction execution. (update: I found multiple concurrency bugs in MySQL!)
+
+I am currently learning Rust and Go.
 `;
 
 const LINKS = `
