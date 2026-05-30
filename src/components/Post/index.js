@@ -56,7 +56,7 @@ export default function Post({ post }) {
         boxShadow="xl"
         borderRadius="xl"
       >
-        <Stack m={5} spacing={4}>
+        <Stack m={5} spacing={4} minW={0}>
           {isCourseReview(post) && (
             <>
               <CourseReviewStats post={post} />
