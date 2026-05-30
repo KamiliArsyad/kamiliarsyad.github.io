@@ -7,7 +7,7 @@ export default function TextInputMD({ text, handleChange, ...rest }) {
     <Stack w="100%" h="90%" spacing={2} mx="auto" px={2}>
       <Divider />
       <Grid
-        templateColumns="1fr 1fr" // Split into two equal columns
+        templateColumns={{ base: "1fr", md: "1fr 1fr" }} // Stack on mobile, split into two equal columns on larger screens
         gap={2}
         w="100%"
         h="100%" // Set height to fill the parent
