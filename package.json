@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "homepage": "https://kamiliarsyad.github.io",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/layout": "^2.3.1",
