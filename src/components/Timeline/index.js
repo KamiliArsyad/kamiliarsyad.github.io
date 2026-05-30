@@ -57,7 +57,7 @@ const milestones = [
   },
   {
     id: 6,
-    date: `2024 - Present`,
+    date: `August 2025 - Present`,
     title: "Backend Engineer @ TikTok (ByteDance)",
     description: `Building data and AI infrastructure for TikTok Live's Data Platform — large-scale OLAP query optimization, data lineage systems, and LLM-powered data agent and dataset tooling.`
   },
