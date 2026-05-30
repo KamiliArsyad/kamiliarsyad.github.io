@@ -19,24 +19,24 @@ const milestones = [
     id: 1,
     date: "March 2021 - May 2021",
     title: "Finance Analyst Intern @ Undisclosed IT Firm",
-    description: `Generated efficient finance analytics report pipeline for a saving and loan cooperative client handling over Rp. 400 billion of 
-    asset by utilizing Oracle SQL and Python's Pandas library. The main outcome was to efficiently collect millions of rows of data scattered 
+    description: `Generated efficient finance analytics report pipeline for a saving and loan cooperative client handling over Rp. 400 billion of
+    asset by utilizing Oracle SQL and Python's Pandas library. The main outcome was to efficiently collect millions of rows of data scattered
     across multiple databases to create a Markov Chain-based transition matrix to assess the probability of default of the loans.`,
   },
   {
     id: 2,
     date: "May 2021 - August 2021",
     title: "Trainer @ Undisclosed IT Firm",
-    description: `Trained the employees fundamentals of asynchronous programming and FastAPI, functional programming paradigm, and React.JS to assist the company in 
+    description: `Trained the employees fundamentals of asynchronous programming and FastAPI, functional programming paradigm, and React.JS to assist the company in
           transitioning its tech stack to a set of new one heavily involving FastAPI in its backend and ReactJS for its frontend.`,
   },
   {
     id: 3,
     date: "May 2023 - August 2023",
     title: "Research Intern @ A*Star Institute of Infocomm Research",
-    description: `Optimized, pipelined, and parallelized network flow and 
-    data transfer algorithms across distributed computer vision and mapping systems in C++ 
-    by utilizing the latest papers and publications pertaining to the topic to achieve more 
+    description: `Optimized, pipelined, and parallelized network flow and
+    data transfer algorithms across distributed computer vision and mapping systems in C++
+    by utilizing the latest papers and publications pertaining to the topic to achieve more
     spread-out and accurate point cloud data within a third of the processing time.`,
   },
   {
@@ -45,7 +45,7 @@ const milestones = [
     title: "Teaching Assistant @ National University of Singapore",
     description: `Named to NUS SoC's Honour List of Student Tutors (AY22/23).
 
-    Facilitated tutorial and lab sessions, graded assignments, and provided consultations for 8 to 15 students in CS1101S (Programming Methodology) 
+    Facilitated tutorial and lab sessions, graded assignments, and provided consultations for 8 to 15 students in CS1101S (Programming Methodology)
     and CS2030S (Programming Methodology 2), imparting fundamental computer science concepts and functional programming principles in CS1101S, while delving into object-oriented design and advanced functional programming techniques in Java for CS2030S.
     I also taught 50 students on CS2100 (Computer Organization) as a tutor; guided students in understanding the low-level details of computer architecture, C, assembly language, and cache management.`,
   },
@@ -54,6 +54,12 @@ const milestones = [
     date: `December 2023 - May 2024`,
     title: "Software Engineer Intern @ ShopBack",
     description: `Develop and maintain the company's Business Process system and platform.`
+  },
+  {
+    id: 6,
+    date: `2024 - Present`,
+    title: "Backend Engineer @ TikTok (ByteDance)",
+    description: `Building data and AI infrastructure for TikTok Live's Data Platform — large-scale OLAP query optimization, data lineage systems, and LLM-powered data agent and dataset tooling.`
   },
 ];
 
