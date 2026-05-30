@@ -54,7 +54,7 @@ export const Card = ({ id, title, description, date }) => {
       }}
     >
       <Box>
-        <Text fontSize="lg" color={isEvenId ? "#86615c" : "#0a128"}>
+        <Text fontSize="lg" color={isEvenId ? "#86615c" : "#0a1228"}>
           {date}
         </Text>
 

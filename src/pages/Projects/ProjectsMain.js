@@ -19,6 +19,13 @@ import { Helmet } from "react-helmet";
 // List of projects
 const projects = [
   {
+    title: "SmolDB",
+    description:
+      "A from-scratch C++20 mini-RDBMS built concurrency-first for high-throughput OLTP on small, critical tables — strict 2PL with sharded row-level locking, ARIES write-ahead logging and crash recovery, and full ACID transactions.",
+    url: "https://github.com/KamiliArsyad/smoldb",
+    tags: ["C++20", "Database Internals", "Concurrency", "ARIES / WAL", "ACID", "Systems"],
+  },
+  {
     title: "Online Markdown Editor",
     description:
       "An online markdown editor that allows you to write and preview markdown in real-time.",

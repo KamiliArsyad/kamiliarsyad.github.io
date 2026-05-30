@@ -11,12 +11,11 @@ import PageSpan from "../components/PageSpan";
 import { Helmet } from "react-helmet";
 
 const LANDING_TEXT = `
-I have extensive experience in both centralized and distributed database design/implementation, 
-have optimized and hacked through RDBMS source codes (SQLite, PostgreSQL, MySQL) for personal uses and my research,
-and am currently doing a research in [NUS' FOCS Lab](https://focs-lab.comp.nus.edu.sg) under Prof. Umang Mathur to create
-novel methods for automated testing of concurrent database transaction execution. (update: I found multiple concurrency bugs in MySQL!)
+I design and build database systems and data/AI infrastructure. At TikTok (ByteDance) I work on large-scale OLAP query optimization, data lineage, and LLM-powered data tooling for the Live Data Platform.
 
-I am currently learning Rust and Go.
+I have extensive experience in centralized and distributed database design, and have optimized and hacked through RDBMS source code (SQLite, PostgreSQL, MySQL) for my own use and my research at [NUS' FOCS Lab](https://focs-lab.comp.nus.edu.sg) under Prof. Umang Mathur — building novel methods for automated testing of concurrent database transactions. (I found multiple concurrency bugs in MySQL!)
+
+I mostly write Go and C++ these days — see [SmolDB](https://github.com/KamiliArsyad/smoldb), my from-scratch concurrent RDBMS.
 `;
 
 const LINKS = `
@@ -54,15 +53,13 @@ export default function Landing() {
           brief={
             <Stack spacing={2}>
               <HeadComponent isDesktop={isDesktop}>
-                Undergraduate Computer Science student at the National
-                University of Singapore
+                Backend Engineer at TikTok (ByteDance), Singapore
               </HeadComponent>
               <HeadComponent isDesktop={isDesktop}>
-                - Specializing in Database Systems, Parallel Computing,
-                Distributed Systems, and Algorithms.
+                - Computer Science, National University of Singapore
               </HeadComponent>
               <HeadComponent isDesktop={isDesktop}>
-                - Minoring in Quantitative Finance and Urban Studies
+                - Database Systems · Distributed Systems · Parallel Computing · Algorithms
               </HeadComponent>
               <TextBox text={LANDING_TEXT} color="white" />
             </Stack>

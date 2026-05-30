@@ -83,7 +83,7 @@ const projects = [
       "ZeroMQ",
       "Computer Vision",
       "Parallel Computing",
-      "High-troughput Software Development",
+      "High-throughput Software Development",
     ],
     date: "30-06-2023",
   },
@@ -92,7 +92,7 @@ const projects = [
     description:
       "Empowering small business owners to digitalize their businesses",
     url: "https://github.com/florentianayuwono/DigitalIT",
-    tags: ["React", "Node.js", "Express", "PosgtreSQL", "Web Development"],
+    tags: ["React", "Node.js", "Express", "PostgreSQL", "Web Development"],
     date: "15-08-2022",
   },
   {
